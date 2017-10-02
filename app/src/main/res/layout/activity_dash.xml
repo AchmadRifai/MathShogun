@@ -1,0 +1,70 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dash"
+    tools:context="rifai.achmad.mathshogun.Dash">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <Button
+            android:id="@+id/playStart"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_green_light"
+            android:text="Play Now"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,MissingConstraints"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="259dp"
+            android:layout_above="@+id/Score"
+            android:layout_alignRight="@+id/opt"
+            android:layout_alignEnd="@+id/opt"
+            android:layout_marginBottom="34dp" />
+
+        <Button
+            android:id="@+id/Score"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score List"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,MissingConstraints"
+            tools:layout_editor_absoluteX="131dp"
+            tools:layout_editor_absoluteY="329dp"
+            android:layout_above="@+id/opt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="42dp" />
+
+        <Button
+            android:id="@+id/opt"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_orange_light"
+            android:text="Option"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,MissingConstraints"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="399dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="61dp" />
+    </RelativeLayout>
+
+</FrameLayout>

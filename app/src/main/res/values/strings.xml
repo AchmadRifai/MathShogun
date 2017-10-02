@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">MathShogun</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="cerita">Anda adalah seorang Shogun dengan gelar Shogun terhebat.
+        Tugas anda adalah melindungi rakyat jepang dari kekejaman orang mongol.
+        Pasukan Mongol yang dipimpin oleh Kubilai Khan menyerang dengan buas.
+        Banyak daerah taklukkan mereka yang mengalami pemerasan dan perampokan.
+        Seluruh rakyat mendukung anda sebagai shogun yang membasmi orang barbar.
+        Lindungi rakyat anda. Rakyat anda membayar upeti sebagai tambahan point.
+        Dalam permainan ini, anda tidak akan mati. Akan tetapi, jika anda kalah dalam
+        duel anda akan kehilangan seorang dari rakyat anda. Dan upeti yang diberikan kepada
+        Anda akan berkurang. Jangan sampai rakyat anda habis. Jika rakyat anda habis, maka
+        pasukan mongol akan langsung pergi dan memperbudak rakyat - rakyat anda. Kasta yang anda lindungi
+        mulai dari pariya(budak), sudra(pelayan / rakyat miskin), pedagang, cindekiawan, pendeta, dan yang terakhir kaisar.
+        Urutan yang tersebut menunjukkan jumlah rakyat yang harus anda lindungi dari pasukan mongol. Jika
+        pasukan mongol membawa pedagang, maka upeti yang anda terima akan berkurang drastis. Jika Anda kehilangan
+        cindekiawan, maka kehebatan pasukan mongol meningkat drastis dan kesulitan anda meningkat pula. Jika
+        Anda kehilangan pendeta, maka jumlah pasukan mongol yang akan anda hadapi semakin banyak dan akan
+        mengurangi jumlah pengalaman yang anda dapatkan. Setiap kekalahan yang anda terima akan mengurangi uang dan
+        rakyat anda. Jadi, lindungilah rakyat anda sebaik - baiknya.
+    </string>
+
+    <string name="title_activity_dash">Dash</string>
+
+    <string name="title_activity_the_score">TheScore</string>
+</resources>
