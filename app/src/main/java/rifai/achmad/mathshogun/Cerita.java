@@ -5,11 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import java.util.LinkedList;
-import java.util.List;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
+import rifai.achmad.mathshogun.util.Work;
 
 public class Cerita extends Activity {
 
@@ -26,14 +22,8 @@ public class Cerita extends Activity {
     }
 
     private void setuju() {
-        List<rifai.achmad.mathshogun.beans.Catatan>l=new LinkedList<>();
-        try {
-            rifai.achmad.mathshogun.util.Work.setData(l);
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (TransformerException e) {
-            e.printStackTrace();
-        }startActivity(new Intent(this,Dash.class));
+        Work.terbaca(this);
+        startActivity(new Intent(this,Dash.class));
         finish();
     }
 

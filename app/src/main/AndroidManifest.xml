@@ -34,7 +34,17 @@
             android:name=".TheScore"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_the_score"
-            android:theme="@style/FullscreenTheme"></activity>
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".About"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_about"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".Atur"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_atur"
+            android:theme="@style/FullscreenTheme" />
     </application>
 
 </manifest>

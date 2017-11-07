@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
-    tools:context="rifai.achmad.mathshogun.TheScore">
+    android:background="@android:color/background_light"
+    tools:context="rifai.achmad.mathshogun.Atur">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
@@ -13,8 +13,7 @@
          android:fitsSystemWindows. -->
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/scoreNilai"
+        android:id="@+id/colAtur"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="horizontal|vertical" />
+        android:layout_height="match_parent" />
 </FrameLayout>

@@ -23,48 +23,65 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/Score"
+            android:layout_alignLeft="@+id/aboutBTN"
+            android:layout_alignStart="@+id/aboutBTN"
+            android:layout_marginBottom="35dp"
             android:background="@android:color/holo_green_light"
             android:text="Play Now"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText,MissingConstraints"
             tools:layout_editor_absoluteX="148dp"
-            tools:layout_editor_absoluteY="259dp"
-            android:layout_above="@+id/Score"
-            android:layout_alignRight="@+id/opt"
-            android:layout_alignEnd="@+id/opt"
-            android:layout_marginBottom="34dp" />
+            tools:layout_editor_absoluteY="259dp" />
 
         <Button
             android:id="@+id/Score"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:text="Score List"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText,MissingConstraints"
             tools:layout_editor_absoluteX="131dp"
-            tools:layout_editor_absoluteY="329dp"
-            android:layout_above="@+id/opt"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="42dp" />
+            tools:layout_editor_absoluteY="329dp" />
 
         <Button
             android:id="@+id/opt"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/aboutBTN"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="48dp"
             android:background="@android:color/holo_orange_light"
             android:text="Option"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText,MissingConstraints"
             tools:layout_editor_absoluteX="148dp"
-            tools:layout_editor_absoluteY="399dp"
-            android:layout_alignParentBottom="true"
+            tools:layout_editor_absoluteY="399dp" />
+
+        <Button
+            android:id="@+id/aboutBTN"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/opt"
+            android:layout_alignStart="@+id/opt"
+            android:layout_below="@+id/Score"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="61dp" />
+            android:layout_marginTop="29dp"
+            android:background="@color/colorPrimary"
+            android:text="About"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,MissingConstraints"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="399dp" />
     </RelativeLayout>
 
 </FrameLayout>

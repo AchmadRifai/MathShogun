@@ -1,6 +1,6 @@
 package rifai.achmad.mathshogun.beans;
 
-import java.util.Date;
+import org.joda.time.DateTime;
 
 /**
  * Created by ai on 22/09/2017.
@@ -9,7 +9,15 @@ import java.util.Date;
 public class Catatan {
     private String nama;
     private int level,point,gold;
-    private java.util.Date tgl;
+    private DateTime tgl;
+
+    public DateTime getTgl() {
+        return tgl;
+    }
+
+    public void setTgl(DateTime tgl) {
+        this.tgl = tgl;
+    }
 
     public String getNama() {
         return nama;
@@ -41,13 +49,5 @@ public class Catatan {
 
     public void setGold(int gold) {
         this.gold = gold;
-    }
-
-    public Date getTgl() {
-        return tgl;
-    }
-
-    public void setTgl(Date tgl) {
-        this.tgl = tgl;
     }
 }

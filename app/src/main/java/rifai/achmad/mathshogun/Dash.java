@@ -2,6 +2,7 @@ package rifai.achmad.mathshogun;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -33,13 +34,26 @@ public class Dash extends AppCompatActivity {
                 option();
             }
         });
+        findViewById(R.id.aboutBTN).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                about();
+            }
+        });
+    }
+
+    private void about() {
+        startActivity(new Intent(this,About.class));
+        finish();
     }
 
     private void option() {
+        startActivity(new Intent(this,Dash.class));
         finish();
     }
 
     private void highScore() {
+        startActivity(new Intent(this,TheScore.class));
         finish();
     }
 

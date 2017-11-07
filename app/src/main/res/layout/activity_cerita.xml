@@ -7,32 +7,31 @@
     android:background="@android:color/background_dark"
     tools:context="rifai.achmad.mathshogun.Cerita">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
-
-        <Button
-            android:id="@+id/skipCerita"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Skip"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="0dp" />
-
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/isiCerita"
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/cerita"
-                android:textColor="@android:color/holo_green_light" />
-        </ScrollView>
-
-    </LinearLayout>
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:id="@+id/isiCerita"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cerita"
+                        android:textColor="@android:color/holo_green_light" />
+                    <Button
+                        android:id="@+id/skipCerita"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Skip"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
 </android.support.constraint.ConstraintLayout>

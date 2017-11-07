@@ -28,7 +28,7 @@ public class FullscreenActivity extends AppCompatActivity {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }if(!Work.f.exists())startActivity(new Intent(this,Cerita.class));
+        }if(!Work.isCerita(this))startActivity(new Intent(this,Cerita.class));
         else startActivity(new Intent(this,Dash.class));
         finish();
     }
