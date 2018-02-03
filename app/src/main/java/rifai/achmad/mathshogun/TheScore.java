@@ -17,6 +17,7 @@ public class TheScore extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_the_score);
+        Work.setImmersive(this.getWindow());
         RecyclerView r=(RecyclerView)findViewById(R.id.scoreNilai);
         r.setAdapter(new NilaiAdapter(Work.readNilai(this)));
     }

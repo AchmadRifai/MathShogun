@@ -13,6 +13,7 @@ public class Cerita extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cerita);
+        Work.setImmersive(this.getWindow());
         (findViewById(R.id.skipCerita)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -15,6 +15,7 @@ public class FullscreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullscreen);
+        Work.setImmersive(this.getWindow());
         new Thread(new Runnable() {
             @Override
             public void run() {

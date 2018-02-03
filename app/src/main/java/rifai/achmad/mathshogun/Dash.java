@@ -22,6 +22,7 @@ public class Dash extends AppCompatActivity {
                 mainSekarang();
             }
         });
+        rifai.achmad.mathshogun.util.Work.setImmersive(this.getWindow());
         findViewById(R.id.Score).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
