@@ -1,8 +1,10 @@
 package rifai.achmad.mathshogun;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import rifai.achmad.mathshogun.adapter.NilaiAdapter;
@@ -17,8 +19,11 @@ public class TheScore extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_the_score);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Work.setImmersive(this.getWindow());
         RecyclerView r=(RecyclerView)findViewById(R.id.scoreNilai);
+        r.setHasFixedSize(true);
+        r.setLayoutManager(new LinearLayoutManager(this));
         r.setAdapter(new NilaiAdapter(Work.readNilai(this)));
     }
 
