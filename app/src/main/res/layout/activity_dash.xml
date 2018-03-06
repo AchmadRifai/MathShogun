@@ -23,10 +23,10 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/Score"
-            android:layout_alignLeft="@+id/aboutBTN"
-            android:layout_alignStart="@+id/aboutBTN"
-            android:layout_marginBottom="35dp"
+            android:layout_above="@+id/aboutBTN"
+            android:layout_alignEnd="@+id/aboutBTN"
+            android:layout_alignRight="@+id/aboutBTN"
+            android:layout_marginBottom="64dp"
             android:background="@android:color/holo_green_light"
             android:text="Play Now"
             android:textSize="18sp"
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/aboutBTN"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="29dp"
             android:background="@android:color/holo_orange_light"
             android:text="Option"
             android:textSize="18sp"
@@ -73,8 +73,7 @@
             android:layout_alignLeft="@+id/opt"
             android:layout_alignStart="@+id/opt"
             android:layout_below="@+id/Score"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="29dp"
+            android:layout_marginTop="18dp"
             android:background="@color/colorPrimary"
             android:text="About"
             android:textSize="18sp"
@@ -82,6 +81,24 @@
             tools:ignore="HardcodedText,MissingConstraints"
             tools:layout_editor_absoluteX="148dp"
             tools:layout_editor_absoluteY="399dp" />
+
+        <Button
+            android:id="@+id/quitBTN"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/opt"
+            android:layout_alignStart="@+id/opt"
+            android:layout_below="@+id/opt"
+            android:layout_marginTop="19dp"
+            android:background="?attr/colorError"
+            android:text="Exit"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,MissingConstraints"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="399dp" />
+
     </RelativeLayout>
 
 </FrameLayout>

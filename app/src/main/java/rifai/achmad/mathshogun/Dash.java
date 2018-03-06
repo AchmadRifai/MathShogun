@@ -43,6 +43,12 @@ public class Dash extends AppCompatActivity {
                 about();
             }
         });
+        findViewById(R.id.quitBTN).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     private void about() {
