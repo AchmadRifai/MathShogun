@@ -1,6 +1,7 @@
 package rifai.achmad.mathshogun.util.dao;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import org.json.JSONException;
@@ -59,7 +60,11 @@ public class DAOAtur implements DAO<Atur>{
     public List<Atur> all() throws JSONException {
         List<Atur>l=new LinkedList<>();
         SQLiteDatabase d=c.getReadableDatabase();
-        d.close();
+        Cursor cur=d.rawQuery("select mode from atur",null);
+        if(cur.moveToFirst()){
+            l.add(new Atur(cur.getString(cur.getColumnIndex("mode")),c));
+            while (cur.moveToNext())l.add(new Atur(cur.getString(cur.getColumnIndex("mode")),c));
+        }d.close();
         return l;
     }
 }

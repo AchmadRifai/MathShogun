@@ -41,25 +41,13 @@ public class Work {
     public static boolean isCerita(Activity a) {
         boolean b=false;
         ConnHelper helper=new ConnHelper(a);
-        SQLiteDatabase db=helper.getReadableDatabase();
-        Cursor c=db.rawQuery("select * from tanda;",null);
-        c.moveToFirst();
-        if(!c.isFirst()){
-            insertInitTanda(a);
-        } else {
-            terbaca(a);
-            b=1==c.getInt(c.getColumnIndex("readed"));
-        } c.close();
+        SQLiteDatabase d=helper.getReadableDatabase();
+        Cursor c=d.query("tenger",new String[]{"aku"},null,null,null,null,null);
+        if(c.moveToFirst())b=1==c.getInt(c.getColumnIndex("aku"));
+        c.close();
+        d.close();
         helper.close();
         return b;
-    }
-
-    private static void insertInitTanda(Activity a) {
-        ConnHelper helper=new ConnHelper(a);
-        SQLiteDatabase db=helper.getWritableDatabase();
-        db.execSQL("insert into tanda values(0);");
-        db.close();
-        helper.close();
     }
 
     public static void setData(List<Catatan> l) {
@@ -99,7 +87,9 @@ public class Work {
     public static void terbaca(Activity a) {
         ConnHelper helper=new ConnHelper(a);
         SQLiteDatabase db=helper.getWritableDatabase();
-        db.execSQL("update tanda set readed=1;");
+        ContentValues cv=new ContentValues();
+        cv.put("aku",1);
+        db.update("tenger",cv,null,null);
         db.close();
         helper.close();
     }
@@ -136,40 +126,6 @@ public class Work {
         cur.close();
         db.close();
         return c;
-    }
-
-    public static Pengaturan muatSetting(Activity a) {
-        Pengaturan p=new Pengaturan();
-        ConnHelper c=new ConnHelper(a);
-        String[]fn={"muni","tambah","batas","sulit","minim","kali"};
-        SQLiteDatabase db=c.getReadableDatabase();
-        Cursor cur=db.query("atur",fn,null,null,null,null,null);
-        cur.moveToFirst();
-        p.setBatas(cur.getInt(cur.getColumnIndex("batas")));
-        p.setKali(cur.getInt(cur.getColumnIndex("kali")));
-        p.setMin(cur.getInt(cur.getColumnIndex("minim")));
-        p.setMuni(1==cur.getInt(cur.getColumnIndex("muni")));
-        p.setSulit(cur.getInt(cur.getColumnIndex("sulit")));
-        p.setTambah(cur.getInt(cur.getColumnIndex("tambah")));
-        cur.close();
-        db.close();
-        c.close();
-        return p;
-    }
-
-    public static void simpanSetting(Activity a, Pengaturan p) {
-        ConnHelper c=new ConnHelper(a);
-        SQLiteDatabase db=c.getWritableDatabase();
-        ContentValues cv=new ContentValues();
-        cv.put("muni",p.isMuni()?1:0);
-        cv.put("batas",p.getBatas());
-        cv.put("kali",p.getKali());
-        cv.put("minim",p.getMin());
-        cv.put("sulit",p.getSulit());
-        cv.put("tambah",p.getTambah());
-        db.update("atur",cv,null,null);
-        db.close();
-        c.close();
     }
 
     public static void setImmersive(Window w) {
