@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html>
+	<head>
+                        <title>  Domain Class Diagram</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+            <link rel="Shortcut Icon" href="http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/images/favicon.ico" type="image/x-icon" />
+                <!--[if lt IE 9]>
+
+    <link rel='stylesheet' id='ie-old-style'  href='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/modules/ie-legacy-message//css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='ie-warn-activation'  href='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/modules/ie-legacy-message//css/activation.css' type='text/css' media='all' />
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link rel='stylesheet' id='ie-warn-activation-7'  href='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/modules/ie-legacy-message//css/activation-7.css' type='text/css' media='all' />
+    <![endif]-->
+    <link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='home-gallery-css'  href='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/modules/gallery/assets/university/css/home-gallery.css?ver=4.9.4' type='text/css' media='all'  property="stylesheet" />
+<link rel='stylesheet' id='binus-precompiled-assets-general-core-css'  href='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/assets/compiled/binus-2015-96-sis/general-core.css?ver=4.9.4' type='text/css' media='all'  property="stylesheet" />
+<link rel='stylesheet' id='theme58_style-css'  href='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/assets/university/css/binus.css' type='text/css' media='all'  property="stylesheet" />
+<style id='theme58_style-inline-css' type='text/css'>
+body #ie{display:none}
+</style>
+<link rel='stylesheet' id='binus-96-css'  href='http://sis.binus.ac.id/wp-content/themes/binus-2015-96-sis/css/style.css?ver=4.9.4' type='text/css' media='all'  property="stylesheet" />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://sis.binus.ac.id/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.0.2' type='text/css' media='all'  property="stylesheet" />
+<link rel='stylesheet' id='58-patch-css'  href='http://sis.binus.ac.id/wp-content/plugins/binus-2015-58-patch//css/58-patch.css?ver=4.9.4' type='text/css' media='all'  property="stylesheet" />
+<link rel='https://api.w.org/' href='http://sis.binus.ac.id/wp-json/' />
+<link rel="alternate" type="application/json+oembed" href="http://sis.binus.ac.id/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fsis.binus.ac.id%2F2016%2F06%2F20%2Fdomain-class-diagram%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://sis.binus.ac.id/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fsis.binus.ac.id%2F2016%2F06%2F20%2Fdomain-class-diagram%2F&#038;format=xml" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-25613739-22', 'auto');
+  ga('send', 'pageview');
+
+</script><script>
+  ga('create', 'UA-27541757-1', {'name': 'gaBINUSOvrNet'});
+  ga('gaBINUSOvrNet.send', 'pageview');
+</script><meta name="google-site-verification" content="C0-cwcCQv0uQIghLHkEKy5sjpMCLt8rY6Di6zA0-W8g" /><style type="text/css" media="all">
+/* <![CDATA[ */
+@import url("http://sis.binus.ac.id/wp-content/plugins/wp-table-reloaded/css/plugin.css?ver=1.9.4");
+@import url("http://sis.binus.ac.id/wp-content/plugins/wp-table-reloaded/css/datatables.css?ver=1.9.4");
+/* ]]> */
+</style>    <meta property="og:title" content="Domain Class Diagram"/>
+    <meta property="og:site_name" content="School of Information Systems"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:locale" content="id_ID"/>
+    <meta property="og:locale:alternate" content="en_US"/>
+    <meta property="og:locale:alternate" content="en_GB"/>
+        <meta property="og:image" content="http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/assets/university//default/fb.png" />
+                    <!--[if lt IE 9]>
+            <script src="http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/js/lib/html5shiv/html5shiv.min.js"></script>
+            <link rel='stylesheet' id='ie-legacy-css'  href='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/assets/university/css/ie-legacy.css' type='text/css' media='all' />
+            <![endif]-->
+            	</head>
+        	<body class="post-template-default single single-post postid-11200 single-format-standard">
+                    <div class="container-fluid" id="base-container">
+                                <div class="container-fluid indent-content clear" id="header-container">
+                    <div id="tagline-banner" class="">
+                        <span id="tagline-banner-tail"></span>
+                        <span id="binus-tagline">People Innovation Excellence</span>
+                    </div>
+                    <div id="web-navigator" class="container-fluid child-container wide">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="clear">
+                                    <li><a href="http://binus.edu">BINA NUSANTARA</a></li>
+                                    <li><a href='http://binus.ac.id'>BINUS UNIVERSITY</a></li><li>School of Information Systems</li>                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                                        <div id="web-search" class="container-fluid child-container wide visible-lg visible-md">
+                        <div class="row">
+                                                        <a id="web-search-trigger" class="closed" href="#">
+                                <i class="icon icon-luv"></i>
+                            </a>
+                                                        <div class="col-md-12" id="web-search-box">
+                                <form method="get" action="http://sis.binus.ac.id">
+                                                                        <input id="web-search-input" type="text" name="s" value="" placeholder="Search"/>
+                                                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                                        <header class="container child-container" id="main-header">
+                        <div id="web-mobile-menu-helper">
+                            <div id="web-mobile-menu-container" class="">
+                                <div class="row">
+                                    <div class="" id="web-mobile-logo">
+                                        <a id="web-mobile-logo-wrap">
+                                                                                            <span class="tiny textual-logo">School of Information Systems</span>
+                                                                                        </a>
+                                    </div>
+                                    <div class="fastclick" id="web-mobile-burger-container" >
+                                        <a id="web-mobile-burger" href="#">Menu</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Main website menu -->
+                        <div id="menu-float-wrapper-helper-1">
+                            <div id="menu-float-wrapper-helper-2">
+                                <div id="menu-float-wrapper-helper-3">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-sm-offset-0" id="site-logo-container">
+                                            <a id="site-logo" href="http://sis.binus.ac.id">
+                                                <img
+                                                    class="retina-fallback large"
+                                                    data-retina-ready=""
+                                                    src="http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/assets/university/site-logo/sis/site-logo-lg.png"
+                                                    alt="School of Information Systems"
+                                                    style="height:102px;width:160px"
+                                                />
+                                                <img
+                                                    class="retina-fallback medium"
+                                                    data-retina-ready=""
+                                                    src="http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/assets/university/site-logo/sis/site-logo.png"
+                                                    alt="School of Information Systems"
+                                                    style="height:83px;width:131px"
+                                                />
+                                                <img
+                                                    class="retina-fallback small"
+                                                    data-retina-ready=""
+                                                    src="http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/assets/university/site-logo/sis/site-logo-sm.png"
+                                                    alt="School of Information Systems"
+                                                    style="height:72px;width:112px"
+                                                />
+                                                                                                    <span class="tiny textual-logo">School of Information Systems</span>
+                                                                                                </a>
+                                            <span id="binus-tagline-mobile">People Innovation Excellence</span>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                            <nav id="web-menu" class="clear">
+                                                <div class="wrapper">
+                                                    <div id="top-menu-wrapper" class="clear"><div class="menu-top-nav generic"><ul id="menu-sis-it-challenge" class="menu"><li class="main-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a title="SIS Design Challenge 2017" href="http://sis.binus.ac.id/sis-design-challenge/" class="menu-link main-menu-link"><span class="wrapper">SIS Design Challenge 2017</span></a></li>
+<li class="main-menu-item order-2  below-5 menu-item menu-item-type-custom menu-item-object-custom"><a href="http://sis.binus.ac.id/icimtech" class="menu-link main-menu-link"><span class="wrapper">ICIMTech 2018</span></a></li>
+<li class="main-menu-item order-3  below-5 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children holding"><span class='parent-pointer fastclick'>expand</span><a title="School of Information Systems" href="#" class="menu-link main-menu-link"><span class="wrapper">About Us</span></a><div class='menu-rail container'><ul class=" container sub-menu menu-depth-1"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/organizational-structure/" class="menu-link sub-menu-link"><span class="wrapper">Organizational Structure</span></a></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><span class='parent-pointer fastclick'>expand</span><a title="Information System Laboratory" href="http://sis.binus.ac.id/is-laboratory/" class="menu-link sub-menu-link"><span class="wrapper">Information System Laboratory</span></a><ul class="  sub-menu menu-depth-2"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a title="Information System Laboratory" href="http://sis.binus.ac.id/is-laboratory/is-lab-assistant/" class="menu-link sub-menu-link"><span class="wrapper">IS Lab Assistant</span></a></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a title="Information System Laboratory" href="http://sis.binus.ac.id/is-laboratory/recruitment/" class="menu-link sub-menu-link"><span class="wrapper">Recruitment</span></a></li>
+</ul></li>
+<li class="sub-menu-item order-3  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/faculty-members/" class="menu-link sub-menu-link"><span class="wrapper">Faculty Members</span></a></li>
+<li class="sub-menu-item order-4  below-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><span class='parent-pointer fastclick'>expand</span><a href="http://sis.binus.ac.id/student-organization/" class="menu-link sub-menu-link"><span class="wrapper">Student Organization</span></a><ul class="  sub-menu menu-depth-2"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/student-organization/himsisfo/" class="menu-link sub-menu-link"><span class="wrapper">HIMSISFO</span></a></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/student-organization/himka/" class="menu-link sub-menu-link"><span class="wrapper">HIMKA</span></a></li>
+</ul></li>
+<li class="sub-menu-item order-5 mod-5 below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/alumni/" class="menu-link sub-menu-link"><span class="wrapper">Alumni</span></a></li>
+</ul></div></li>
+<li class="main-menu-item order-4  below-5 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><span class='parent-pointer fastclick'>expand</span><a href="#Program" class="menu-link main-menu-link"><span class="wrapper">Programs</span></a><div class='menu-rail container'><ul class=" container sub-menu menu-depth-1"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><span class='parent-pointer fastclick'>expand</span><a href="http://sis.binus.ac.id/information-systems/curriculum/" class="menu-link sub-menu-link"><span class="wrapper">Information Systems</span></a><ul class="  sub-menu menu-depth-2"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-systems/curriculum/vision-mission/" class="menu-link sub-menu-link"><span class="wrapper">Vision &amp; Mission</span></a></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-systems/curriculum/program-objective/" class="menu-link sub-menu-link"><span class="wrapper">Program Objective</span></a></li>
+<li class="sub-menu-item order-3  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-systems/curriculum/graduate-competency/" class="menu-link sub-menu-link"><span class="wrapper">Graduate Competency</span></a></li>
+<li class="sub-menu-item order-4  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-systems/curriculum/prospective-career-of-the-graduate/" class="menu-link sub-menu-link"><span class="wrapper">Prospective Career of The Graduate</span></a></li>
+<li class="sub-menu-item order-5 mod-5 below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-systems/curriculum/course-structure/" class="menu-link sub-menu-link"><span class="wrapper">Course Structure</span></a></li>
+<li class="sub-menu-item order-6   menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-systems/curriculum/prerequisites/" class="menu-link sub-menu-link"><span class="wrapper">Prerequisites</span></a></li>
+<li class="sub-menu-item order-7   menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-systems/curriculum/quality-controlled-examination-upm/" class="menu-link sub-menu-link"><span class="wrapper">Quality Controlled Examination (UPM)</span></a></li>
+</ul></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><span class='parent-pointer fastclick'>expand</span><a href="http://sis.binus.ac.id/information-systems-audit/curriculum/" class="menu-link sub-menu-link"><span class="wrapper">Information Systems Audit</span></a><ul class="  sub-menu menu-depth-2"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-systems-audit/curriculum/vision-mission/" class="menu-link sub-menu-link"><span class="wrapper">Vision &#038; Mission</span></a></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-systems-audit/curriculum/program-objective/" class="menu-link sub-menu-link"><span class="wrapper">Program Objective</span></a></li>
+<li class="sub-menu-item order-3  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-systems-audit/curriculum/graduate-competency/" class="menu-link sub-menu-link"><span class="wrapper">Graduate Competency</span></a></li>
+<li class="sub-menu-item order-4  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-systems-audit/curriculum/prospective-career-of-the-graduate/" class="menu-link sub-menu-link"><span class="wrapper">Prospective Career of The Graduate</span></a></li>
+<li class="sub-menu-item order-5 mod-5 below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-systems-audit/curriculum/course-structure/" class="menu-link sub-menu-link"><span class="wrapper">Course Structure</span></a></li>
+<li class="sub-menu-item order-6   menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-systems-audit/curriculum/prerequisites/" class="menu-link sub-menu-link"><span class="wrapper">Prerequisites</span></a></li>
+<li class="sub-menu-item order-7   menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-systems-audit/curriculum/quality-controlled-examination-upm/" class="menu-link sub-menu-link"><span class="wrapper">Quality Controlled Examination (UPM)</span></a></li>
+</ul></li>
+<li class="sub-menu-item order-3  below-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><span class='parent-pointer fastclick'>expand</span><a href="http://sis.binus.ac.id/curriculum/" class="menu-link sub-menu-link"><span class="wrapper">Accounting Information Systems</span></a><ul class="  sub-menu menu-depth-2"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/curriculum-accounting-information-system/vision-mission/" class="menu-link sub-menu-link"><span class="wrapper">Vision &amp; Mission</span></a></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/curriculum-accounting-information-system/program-objectives/" class="menu-link sub-menu-link"><span class="wrapper">Program Objectives</span></a></li>
+<li class="sub-menu-item order-3  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/curriculum/graduate-competency/" class="menu-link sub-menu-link"><span class="wrapper">Graduate Competency</span></a></li>
+<li class="sub-menu-item order-4  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/curriculum/prospective-career-of-the-graduate/" class="menu-link sub-menu-link"><span class="wrapper">Prospective Career of The Graduate</span></a></li>
+<li class="sub-menu-item order-5 mod-5 below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/curriculum/course-structure/" class="menu-link sub-menu-link"><span class="wrapper">Course Structure</span></a></li>
+<li class="sub-menu-item order-6   menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/curriculum/prerequisites/" class="menu-link sub-menu-link"><span class="wrapper">Prerequisites</span></a></li>
+<li class="sub-menu-item order-7   menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/curriculum-accounting-information-system/quality-controlled-examinations-upm/" class="menu-link sub-menu-link"><span class="wrapper">Quality controlled examinations (UPM)</span></a></li>
+</ul></li>
+<li class="sub-menu-item order-4  below-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><span class='parent-pointer fastclick'>expand</span><a href="http://sis.binus.ac.id/curriculum-computerized-accounting/" class="menu-link sub-menu-link"><span class="wrapper">Computerized Accounting</span></a><ul class="  sub-menu menu-depth-2"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/curriculum-computerized-accounting/vision-mission/" class="menu-link sub-menu-link"><span class="wrapper">Vision &#038; Mission</span></a></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/curriculum-computerized-accounting/program-objective/" class="menu-link sub-menu-link"><span class="wrapper">Program Objective</span></a></li>
+<li class="sub-menu-item order-3  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/curriculum-computerized-accounting/graduate-competency/" class="menu-link sub-menu-link"><span class="wrapper">Graduate Competency</span></a></li>
+<li class="sub-menu-item order-4  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/curriculum-computerized-accounting/prospective-career-of-the-graduate/" class="menu-link sub-menu-link"><span class="wrapper">Prospective Career of The Graduate</span></a></li>
+<li class="sub-menu-item order-5 mod-5 below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/curriculum-computerized-accounting/course-structure/" class="menu-link sub-menu-link"><span class="wrapper">Course Structure</span></a></li>
+<li class="sub-menu-item order-6   menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/curriculum-computerized-accounting/prerequisites/" class="menu-link sub-menu-link"><span class="wrapper">Prerequisites</span></a></li>
+<li class="sub-menu-item order-7   menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/curriculum-computerized-accounting/quality-controlled-examination-upm/" class="menu-link sub-menu-link"><span class="wrapper">Quality Controlled Examination (UPM)</span></a></li>
+</ul></li>
+<li class="sub-menu-item order-5 mod-5 below-5 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><span class='parent-pointer fastclick'>expand</span><a href="http://sis.binus.ac.id/double-degree-in-information-systems-accounting/" class="menu-link sub-menu-link"><span class="wrapper">Double Degree In Information Systems &#038; Accounting</span></a><ul class="  sub-menu menu-depth-2"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/double-degree-in-information-systems-accounting/vision-mission-2/" class="menu-link sub-menu-link"><span class="wrapper">Vision &#038; Mission</span></a></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/double-degree-in-information-systems-accounting/program-objective/" class="menu-link sub-menu-link"><span class="wrapper">Program Objective</span></a></li>
+<li class="sub-menu-item order-3  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/curriculum-accounting-information-system/graduate-competencies/" class="menu-link sub-menu-link"><span class="wrapper">Graduate Competencies</span></a></li>
+<li class="sub-menu-item order-4  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/double-degree-in-information-systems-accounting/prospective-career-of-the-graduates/" class="menu-link sub-menu-link"><span class="wrapper">Prospective Career of The Graduates</span></a></li>
+<li class="sub-menu-item order-5 mod-5 below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/double-degree-in-information-systems-accounting/course-structure/" class="menu-link sub-menu-link"><span class="wrapper">Course Structure</span></a></li>
+<li class="sub-menu-item order-6   menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/double-degree-in-information-systems-accounting/prerequisites/" class="menu-link sub-menu-link"><span class="wrapper">Prerequisites</span></a></li>
+<li class="sub-menu-item order-7   menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/double-degree-in-information-systems-accounting/quality-controlled-examinations-upm/" class="menu-link sub-menu-link"><span class="wrapper">Quality Controlled Examinations (UPM)</span></a></li>
+</ul></li>
+<li class="sub-menu-item order-6   menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><span class='parent-pointer fastclick'>expand</span><a href="http://sis.binus.ac.id/business-information-technology/" class="menu-link sub-menu-link"><span class="wrapper">Business Information Technology</span></a><ul class="  sub-menu menu-depth-2"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/business-information-technology/vision-mission/" class="menu-link sub-menu-link"><span class="wrapper">Vision &#038; Mission</span></a></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/business-information-technology/program-objective/" class="menu-link sub-menu-link"><span class="wrapper">Program Objective</span></a></li>
+<li class="sub-menu-item order-3  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/business-information-technology/graduate-competency/" class="menu-link sub-menu-link"><span class="wrapper">Graduate Competency</span></a></li>
+<li class="sub-menu-item order-4  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/business-information-technology/prospective-career-of-the-graduate/" class="menu-link sub-menu-link"><span class="wrapper">Prospective Career of The Graduate</span></a></li>
+<li class="sub-menu-item order-5 mod-5 below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/business-information-technology/course-structure/" class="menu-link sub-menu-link"><span class="wrapper">Course Structure</span></a></li>
+<li class="sub-menu-item order-6   menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/business-information-technology/prerequisites/" class="menu-link sub-menu-link"><span class="wrapper">Prerequisites</span></a></li>
+<li class="sub-menu-item order-7   menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/business-information-technology/quality-controlled-examination-upm/" class="menu-link sub-menu-link"><span class="wrapper">Quality Controlled Examination (UPM)</span></a></li>
+</ul></li>
+<li class="sub-menu-item order-7   menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><span class='parent-pointer fastclick'>expand</span><a href="http://sis.binus.ac.id/information-system-and-management/" class="menu-link sub-menu-link"><span class="wrapper">Double Degree In Information Systems and Management</span></a><ul class="  sub-menu menu-depth-2"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-system-and-management/vision-mission/" class="menu-link sub-menu-link"><span class="wrapper">Vision &#038; Mission</span></a></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-system-and-management/program-objective/" class="menu-link sub-menu-link"><span class="wrapper">Program Objective</span></a></li>
+<li class="sub-menu-item order-3  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-system-and-management/graduate-competency/" class="menu-link sub-menu-link"><span class="wrapper">Graduate Competency</span></a></li>
+<li class="sub-menu-item order-4  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-system-and-management/prospective-career-of-the-graduate/" class="menu-link sub-menu-link"><span class="wrapper">Prospective Career of The Graduate</span></a></li>
+<li class="sub-menu-item order-5 mod-5 below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-system-and-management/course-structure/" class="menu-link sub-menu-link"><span class="wrapper">Course Structure</span></a></li>
+<li class="sub-menu-item order-6   menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-system-and-management/prerequisites/" class="menu-link sub-menu-link"><span class="wrapper">Prerequisites</span></a></li>
+<li class="sub-menu-item order-7   menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/information-system-and-management/quality-controlled-examination-upm/" class="menu-link sub-menu-link"><span class="wrapper">Quality Controlled Examination (UPM)</span></a></li>
+</ul></li>
+</ul></div></li>
+<li class="main-menu-item order-5 mod-5 below-5 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children holding"><span class='parent-pointer fastclick'>expand</span><a href="#" class="menu-link main-menu-link"><span class="wrapper">Activities</span></a><div class='menu-rail container'><ul class=" container sub-menu menu-depth-1"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><span class='parent-pointer fastclick'>expand</span><a href="#Achievements" class="menu-link sub-menu-link"><span class="wrapper">Achievements</span></a><ul class="  sub-menu menu-depth-2"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/students/" class="menu-link sub-menu-link"><span class="wrapper">Students</span></a></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/lecturers/" class="menu-link sub-menu-link"><span class="wrapper">Lecturers</span></a></li>
+</ul></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><span class='parent-pointer fastclick'>expand</span><a href="#Research" class="menu-link sub-menu-link"><span class="wrapper">Research</span></a><ul class="  sub-menu menu-depth-2"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/students-thesis-topic/" class="menu-link sub-menu-link"><span class="wrapper">Student&#8217;s Thesis Topic</span></a></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/current-research/" class="menu-link sub-menu-link"><span class="wrapper">Current Research</span></a></li>
+<li class="sub-menu-item order-3  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/publication/" class="menu-link sub-menu-link"><span class="wrapper">Publication</span></a></li>
+<li class="sub-menu-item order-4  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/student-project/" class="menu-link sub-menu-link"><span class="wrapper">Student Project</span></a></li>
+</ul></li>
+<li class="sub-menu-item order-3  below-5 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><span class='parent-pointer fastclick'>expand</span><a href="#Partnership" class="menu-link sub-menu-link"><span class="wrapper">Partnership</span></a><ul class="  sub-menu menu-depth-2"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/industry/" class="menu-link sub-menu-link"><span class="wrapper">Industry</span></a></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/academic/" class="menu-link sub-menu-link"><span class="wrapper">Academic</span></a></li>
+</ul></li>
+<li class="sub-menu-item order-4  below-5 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><span class='parent-pointer fastclick'>expand</span><a href="#CommunityServices" class="menu-link sub-menu-link"><span class="wrapper">Community Services</span></a><ul class="  sub-menu menu-depth-2"><li class="sub-menu-item order-1  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/training-consultation/" class="menu-link sub-menu-link"><span class="wrapper">Training &amp; Consultation</span></a></li>
+<li class="sub-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/application-development/" class="menu-link sub-menu-link"><span class="wrapper">Application Development</span></a></li>
+</ul></li>
+</ul></div></li>
+<li class='main-menu-item menu-item menu-item-has-children'><span class='parent-pointer fastclick'>expand</span><a href='#' class='menu-link main-menu-link'><span class='wrapper'>Category</span></a><div class='menu-rail container'><ul class='container sub-menu menu-depth-1'><li class='sub-menu-item order-1 menu-item below-5 '><span class='parent-pointer fastclick'>expand</span><a class='menu-link sub-menu-link' href='http://sis.binus.ac.id/category/article/'><span class='wrapper'>Popular Articles</span></a></li><li class='sub-menu-item order-1 menu-item below-5 '><span class='parent-pointer fastclick'>expand</span><a class='menu-link sub-menu-link' href='http://sis.binus.ac.id/category/news/'><span class='wrapper'>News</span></a></li><li class='sub-menu-item order-1 menu-item below-5 '><span class='parent-pointer fastclick'>expand</span><a class='menu-link sub-menu-link' href='http://sis.binus.ac.id/category/sisyoutube/'><span class='wrapper'>Digital Content</span></a></li><li class='sub-menu-item order-1 menu-item below-5 '><span class='parent-pointer fastclick'>expand</span><a class='menu-link sub-menu-link' href='http://sis.binus.ac.id/category/events/'><span class='wrapper'>Events</span></a></li><li class='sub-menu-item order-1 menu-item below-5 mod-5'><span class='parent-pointer fastclick'>expand</span><a class='menu-link sub-menu-link' href='http://sis.binus.ac.id/category/showcase/'><span class='wrapper'>Showcase</span></a></li><li class='sub-menu-item order-1 menu-item  '><span class='parent-pointer fastclick'>expand</span><a class='menu-link sub-menu-link' href='http://sis.binus.ac.id/category/picture/'><span class='wrapper'>Picture</span></a></li><li class='sub-menu-item order-1 menu-item  '><span class='parent-pointer fastclick'>expand</span><a class='menu-link sub-menu-link' href='http://sis.binus.ac.id/category/spotlight/'><span class='wrapper'>Spotlight</span></a></li><li class='sub-menu-item order-1 menu-item  '><span class='parent-pointer fastclick'>expand</span><a class='menu-link sub-menu-link' href='http://sis.binus.ac.id/category/alumni/'><span class='wrapper'>Alumni</span></a></li></ul></div></li></ul></div></div><div id='bottom-menu-wrapper'><div class="menu-top-nav bottom"><ul id="menu-top-navigation-small" class="menu"><li class="main-menu-item order-1  below-5 menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="http://sis.binus.ac.id/" class="menu-link main-menu-link"><span class="wrapper">Home</span></a></li>
+<li class="main-menu-item order-2  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/contact-us/" class="menu-link main-menu-link"><span class="wrapper">Contact Us</span></a></li>
+<li class="main-menu-item order-3  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/download/" class="menu-link main-menu-link"><span class="wrapper">Downloads</span></a></li>
+<li class="main-menu-item order-4  below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/enrichment/" class="menu-link main-menu-link"><span class="wrapper">Enrichment</span></a></li>
+<li class="main-menu-item order-5 mod-5 below-5 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sis.binus.ac.id/thesis-proposal-beta/" class="menu-link main-menu-link"><span class="wrapper">Doc. Status</span></a></li>
+</ul></div></div>                                                </div>
+                                                <form method="get" id="mobile-search" action="http://sis.binus.ac.id">
+                                                                                                        <input id="web-mobile-search" class="text" type="text" name="s" value="" placeholder="Search"/>
+                                                                                                    </form>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                                                    </div>
+                            </div>
+                        </div>
+                        <!-- End of main website menu -->
+                    </header>
+                </div>
+                    <section id="single-container" class="container-fluid generic-cotainer inside-container">
+        <div class="container-fluid indent-content clear">
+            <div class="child-container container">
+                <div class="row">
+            <article id="inside-page" class="post-11200 post type-post status-publish format-standard hentry category-article tag-asisten tag-bina-nusantara tag-binus tag-binusian tag-fulltime-assistant tag-greater-nusantara tag-greaternusantara tag-information-system tag-information-system-laboratory tag-information-technology tag-islab tag-it tag-lab-sisfo tag-parttime-assistant tag-school-of-information-system tag-sis tag-sistem-informasi tag-teknik-informatik tag-teknologi tag-teknologi-informasi tag-ti" itemscope itemtype="http://schema.org/BlogPosting">
+
+                <nav class="breadcrumb">
+        <ul class="clear">
+            <li class="breadcrumb-item"><a href="http://sis.binus.ac.id">Home</a></li>
+            <li class="breadcrumb-item"><a href="http://sis.binus.ac.id/category/article/" rel="category tag">Popular Articles</a></li><li class="breadcrumb-item">Domain Class Diagram</li>        </ul>
+    </nav>
+    
+                        <header class="header-block">
+                                <h1 class="the-h1 multi-line" itemprop="headline">
+                    Domain Class Diagram                </h1>
+                                            </header>
+            
+
+            
+            <main class="wp-content clear main-read the-640" style="">
+            <p><strong><em>Pendahuluan: Apa itu UML ?</em></strong></p>
+<p><em>Unified Modeling Language (UML) adalah </em>satu set standar bahasa dalam teknik <em>diagram</em> pengembang untuk <em>object-oriented system development.</em></p>
+<p><strong><em>Class Diagram</em></strong><strong>? Apakah itu?</strong></p>
+<p><em>Class diagram</em> merupakan salah satu diagram utama dari UML untuk menggambarkan <em>class</em> atau <em>blueprint</em> <em>object</em> pada sebuah sistem. Analisis pembentukan class diagram merupakan aktivitas inti yang sangat mempengaruhi arsitektur piranti lunak yang dirancang hingga ke tahap pengkodean.</p>
+<p><strong><em>Domain Modelling? </em></strong><strong>Apakah itu?</strong></p>
+<p><em>Domain Modelling</em> merupakan teknik pengidentifikasian <em>object-object</em> pada kata benda yang terdapat pada daftar <em>requirement</em> yang diklasifikasikan pada <em>area (domain)</em> permasalahan yang sama untuk dijadikan <em>candidate class</em> pada <em>class diagram</em>.</p>
+<p><strong>Notasi <em>Class Diagram</em></strong></p>
+<p><a href="http://sis.binus.ac.id/files/2016/06/1.png"><img class="aligncenter size-full wp-image-11201" src="http://sis.binus.ac.id/files/2016/06/1.png" alt="1" width="395" height="199" /></a></p>
+<p><strong>Hubungan antar <em>class</em></strong></p>
+<p>Pada <em>class diagram</em> juga digambarkan bagaimana interaksi hubungan antar <em>class</em> dalam sebuah konstruksi piranti lunak seperti hubungan asosiasi, agregasi, komposisi, dan <em>inheritance </em>dan<em> generalization</em></p>
+<p>1. Asosiasi</p>
+<p>Asosiasi, yaitu hubungan statis antar <em>class</em>. Umumnya menggambarkan <em>class</em> yang memiliki atribut berupa <em>class</em> lain, atau <em>class</em> yang harus mengetahui eksistensi <em>class </em>lain. Panah <em>navigability</em> menunjukkan arah <em>query</em> antar <em>class</em>.</p>
+<p><a href="http://sis.binus.ac.id/files/2016/06/2.png"><img class="aligncenter size-full wp-image-11202" src="http://sis.binus.ac.id/files/2016/06/2.png" alt="2" width="477" height="230" /></a></p>
+<p>Contoh:</p>
+<p><a href="http://sis.binus.ac.id/files/2016/06/3.png"><img class="aligncenter size-full wp-image-11203" src="http://sis.binus.ac.id/files/2016/06/3.png" alt="3" width="571" height="107" /></a></p>
+<p>Contoh diatas menunjukan <em>domain model class</em> yang <em>simple</em> dimana terdapat 3 <em>class</em>: <em>Member, Sales Order</em>, dan <em>Product.</em> Kita bisa lihat <em>Member class</em> dapat mempunyai minimal 1 dan maksimal banyak <em>Sales Order class</em>. Dan setiap <em>Sales Order class</em> dapat mempunyai minimal 1 dan maksimal 1 <em>Member class. Sales Order class</em> dapat mempunyai minimal 1 dan maksimal banyak <em>Product class</em>. Sedangkan <em>Product class</em> dapat mempunyai minimal 1 dan maksimal banyak <em>Sales Order class.</em></p>
+<p>Jika kita menemukan hubungan antar <em>class</em> seperti <em>Sales Order</em> dengan <em>Product</em>, yang disebut sebagai <em>many-to-many</em> asosiasi. Maka kita harus membuat <em>Detail Class</em>, seperti:</p>
+<p><a href="http://sis.binus.ac.id/files/2016/06/4.png"><img class="aligncenter size-full wp-image-11204" src="http://sis.binus.ac.id/files/2016/06/4.png" alt="4" width="631" height="414" /></a>Mengapa harus dibuat <em>Detail Class</em>? Apabila kita tidak membuat <em>Detail Class</em> maka pada <em>table database</em> tampilannya akan seperti:</p>
+<p><a href="http://sis.binus.ac.id/files/2016/06/5-1.png"><img class="size-full wp-image-11206 alignleft" src="http://sis.binus.ac.id/files/2016/06/5-1.png" alt="5" width="302" height="146" /></a>Pada <em>ID Sales Order</em> S002, <em>Product</em> dengan ID P002 dibeli dengan jumlah 2 buah. Tetapi pada <em>table database</em>, datanya tersimpan redudansi (<em>double</em>). Sehingga kita harus membuat <em>Detail Class</em> agar data tidak redudansi.</p>
+<p>Sehingga <em>Sales Order class </em>mempunyai minimal 1 dan maksimal banyak <em>Detail SO class</em>. Dan <em>Detail SO class</em> hanya mempunyai 1 <em>Sales Order class</em>. Sedangkan, <em>Product class</em> mempunyai minimal 1 dan maksimal banyak <em>Detail SO class</em>. Dan <em>Detail SO class</em> hanya mempunyai 1 <em>Product class</em>.</p>
+<p>Berikut ini tampilan <em>table database</em> pada <em>Detail SO</em> <em>class</em>:</p>
+<p><a href="http://sis.binus.ac.id/files/2016/06/6.png"><img class="size-full wp-image-11207 alignleft" src="http://sis.binus.ac.id/files/2016/06/6.png" alt="6" width="319" height="71" /></a></p>
+<p>Sehingga <em>ID Sales Order</em> dan <em>ID Product</em> pada <em>Detail SO class</em> akan sekaligus menjadi <em>Primary Key</em> dan <em>Foreign Key</em>. Dan terdapat atribut tambahan pada <em>Detail SO class</em> yaitu <em>Quantity</em></p>
+<p>2. Agregasi</p>
+<p>Agregasi, yaitu hubungan antar <em>class</em> yang menyatakan hubungan <em>“has-a.”</em></p>
+<p>Contohnya: Mobil dengan kaca spion.</p>
+<p><a href="http://sis.binus.ac.id/files/2016/06/7-1.png"><img class="aligncenter size-full wp-image-11209" src="http://sis.binus.ac.id/files/2016/06/7-1.png" alt="7" width="339" height="96" /></a>Bila kita memodelkan sebuah mobil, maka dapat dikatakan bahwa mobil mempunyai kaca spion. Secara logis dapat dikatakan sebuah mobil dapat berfungsi walaupun tanpa kaca spion. Mobil dapat dipisahkan dari kaca spion</p>
+<p>3. Komposisi</p>
+<p>Komposisi, yaitu hubungan antar <em>class</em> yang menyatakan hubungan <em>“part-of.”</em></p>
+<p>Contohnya: Mobil dengan mesin</p>
+<p><a href="http://sis.binus.ac.id/files/2016/06/8.png"><img class="aligncenter size-full wp-image-11210" src="http://sis.binus.ac.id/files/2016/06/8.png" alt="8" width="335" height="100" srcset="http://sis.binus.ac.id/files/2016/06/8.png 335w, http://sis.binus.ac.id/files/2016/06/8-330x100.png 330w" sizes="(max-width: 335px) 100vw, 335px" /></a></p>
+<p>Bila kita memodelkan sebuah mobil, maka dapat dikatakan bahwa mesin adalah bagian dari mobil. Secara logis dapat dikatakan bahwa mobil tidak dapat dipisahkan dari mesin. Bila mesin tidak ada disebuah mobil maka mobil itu tidak berfungsi sebagai mobil.</p>
+<p><em>4. Inheritance</em> dan <em>Generalization</em></p>
+<p><em>Inheritance</em> adalah hubungan hirarkis antar <em>class</em>. <em>Class</em> dapat diturunkan dari <em>class</em> lain dan mewarisi semua atribut dan metoda <em>class</em> asalnya dan menambahkan fungsionalitas baru, sehingga ia disebut anak dari <em>class</em> yang diwarisinya. Kebalikan dari pewarisan adalah generalisasi.</p>
+<p>.<em><a href="http://sis.binus.ac.id/files/2016/06/9-1.png"><img class="aligncenter size-full wp-image-11212" src="http://sis.binus.ac.id/files/2016/06/9-1.png" alt="9" width="418" height="231" /></a></em></p>
+<h1>References</h1>
+<p>John W. Satzinger, R. B. (2012). Systems Analysis and Design in a Changing World. Joe Sabatino.</p>
+<p>&nbsp;</p>
+            </main>
+            
+            
+
+            <div id="content-date">
+                <hr/>
+                <span>Published at : <time datetime="2016-06-20 09:52">20 June 2016</time></span>            </div>
+
+                            <aside class="related-content the-640">
+                    <h3 class="meta-text">Related Content</h3>
+                    <ul class="related-posts">
+                        <li class="related-post"><a href="http://sis.binus.ac.id/2017/09/19/sistem-informasi-dan-imbalan-gaji/">Sistem Informasi dan imbalan gaji</a></li><li class="related-post"><a href="http://sis.binus.ac.id/2017/01/23/12590/">PROBLEMS IN OPERATIONAL DASHBOARD DESIGN ON PT. TRANSPORTASI JAKARTA</a></li><li class="related-post"><a href="http://sis.binus.ac.id/2014/04/12/pengembangan-destinasi-wisata-berbasis-teknologi-informasi/">Pengembangan Destinasi Wisata berbasis Teknologi Informasi</a></li>                    </ul>
+                </aside>
+                
+
+                        <div class="sharer-items clear the-640">
+                <span class="meta-text">SHARE THIS</span>
+                <ul class="the-sharer-items clear">
+                    <li class="the-sharer-item"><a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsis.binus.ac.id%2F2016%2F06%2F20%2Fdomain-class-diagram%2F">facebook</a></li>
+                    <li class="the-sharer-item"><a class="icon-twitter" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fsis.binus.ac.id%2F2016%2F06%2F20%2Fdomain-class-diagram%2F">twitter</a></li>
+                    <li class="the-sharer-item"><a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fsis.binus.ac.id%2F2016%2F06%2F20%2Fdomain-class-diagram%2F">linkedin</a></li>
+                                        <li class="the-sharer-item"><a class="icon-email" href="mailto:'?subject=Domain Class Diagram&amp;body=http://sis.binus.ac.id/2016/06/20/domain-class-diagram/">email</a></li>
+                </ul>
+            </div>
+            
+                            <footer class="article-author clear the-640">
+                    <span class="meta-text">Written By</span>
+                    <div class="avatar size80">
+                        <img src="http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/images/default/avatar.jpg" alt=""/>
+                    </div>
+                    <div class="author-information">
+                        <address class="author">Christina Natalia Tanuwijaya</address>
+                        <span class="meta-text author-position">Fulltime Assistant | Information System Laboratory</span>
+                        <a class="meta-text author-website" href="http://sis.binus.ac.id/is-laboratory/">http://sis.binus.ac.id/is-laboratory/</a>                    </div>
+                </footer>
+                
+            
+        </article>
+                        </div>
+            </div>
+        </div>
+    </section>
+        <section id="future-student-container" class="container-fluid generic-cotainer hidden-xs hidden-sm">
+        <div class="container-fluid indent-content clear">
+            <div class="child-container container">
+                <div class="row">
+        <section id="future-student" class="col-md-12">
+        <div class="row">
+            <div class="col-md-10" id="future-student-items">
+                <header>
+                    <h3 class="the-h1">FUTURE STUDENTS</h3>
+                </header>
+                <ul class="the-items clear">
+                                        <li class="the-item" id="block-join">
+                        <a href="https://payment.binus.edu/">
+                            <i class="icon icon-block-join"></i>
+                            <span class="the-h6">Gabung BINUS</span>
+                        </a>
+                    </li>
+
+                                        <li class="the-item" id="block-consultation">
+                        <a href="#">
+                            <i class="icon icon-block-consultation"></i>
+                            <span class="the-h6">Online Consultation</span>
+                        </a>
+                        <div class="pop-dialog">
+                                                        <div class="dialog-item clear pointer">
+                                <label class="dialog-item-head middle">
+                                    <img alt="line-icon" height="12" width="12" src="http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/modules/home-admission/assets/university/images/icon-line.png" class="item-icon size24"/>
+                                </label>
+                                <p class="dialog-item-content">
+                                    <a href="http://line.me/ti/p/%40gabung_binus" class="field multi-line">
+                                        Undergraduate Program
+                                    </a>
+                                </p>
+                            </div>
+                                                                                    <div class="dialog-item clear pointer">
+                                <label class="dialog-item-head middle">
+                                    <img alt="line-icon" height="12" width="12" src="http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/modules/home-admission/assets/university/images/icon-line.png" class="item-icon size24"/>
+                                </label>
+                                <p class="dialog-item-content">
+                                    <a href="http://line.me/ti/p/%40binusonline" class="field">
+                                        Online Learning
+                                    </a>
+                                </p>
+                            </div>
+                                                                                    <div class="dialog-item clear pointer">
+                                <label class="dialog-item-head middle">
+                                    <img alt="ym-status" height="12" width="12" src="http://opi.yahoo.com/online?u=binusinternational_admission&amp;m=g&amp;t=0" class="item-icon"/>
+                                </label>
+                                <p class="dialog-item-content">
+                                    <a href="ymsgr:sendIM?binusinternational_admission" class="field multi-line">
+                                        Undergraduate Program International
+                                    </a>
+                                </p>
+                            </div>
+                                                                                    <div class="dialog-item clear pointer">
+                                <label class="dialog-item-head middle">
+                                    <img alt="ym-status" height="12" width="12" src="http://opi.yahoo.com/online?u=binusbusinessschool_admission&amp;m=g&amp;t=0" class="item-icon"/>
+                                </label>
+                                <p class="dialog-item-content">
+                                    <a href="ymsgr:sendIM?binusbusinessschool_admission" class="field">
+                                        Business School
+                                    </a>
+                                </p>
+                            </div>
+                                                                                    <div class="dialog-item clear pointer">
+                                <label class="dialog-item-head middle">
+                                    <img alt="ym-status" height="12" width="12" src="http://opi.yahoo.com/online?u=binusgraduate_admission&amp;m=g&amp;t=0" class="item-icon"/>
+                                </label>
+                                <p class="dialog-item-content">
+                                    <a href="ymsgr:sendIM?binusgraduate_admission" class="field">
+                                        Graduate Program
+                                    </a>
+                                </p>
+                                <i class="tail"></i>
+                            </div>
+                                                    </div>
+                    </li>
+
+                                        <li class="the-item" id="block-location">
+                        <a href="#">
+                            <i class="icon icon-block-location"></i>
+                            <span class="the-h6">Location</span>
+                        </a>
+                        <div class="pop-dialog">
+                                                        <div class="dialog-item clear pointer">
+                                <label class="dialog-item-head">
+                                    <i class="item-icon icon-pin-location"></i>
+                                </label>
+                                <p class="dialog-item-content">
+                                    <a class="field" href="http://binus.ac.id/representatives-dki-jakarta/">
+                                        Jakarta
+                                    </a>
+                                </p>
+                            </div>
+                                                                                    <div class="dialog-item clear pointer">
+                                <label class="dialog-item-head">
+                                    <i class="item-icon icon-pin-location"></i>
+                                </label>
+                                <p class="dialog-item-content">
+                                    <a class="field" href="http://binus.ac.id/representatives-outside-jakarta/">
+                                        Outside Jakarta
+                                    </a>
+                                </p>
+                                <i class="tail"></i>
+                            </div>
+                                                    </div>
+                    </li>
+
+                                        <li class="the-item" id="block-call-service">
+                        <a href="#">
+                            <i class="icon icon-block-call-service"></i>
+                            <span class="the-h6">Call Service</span>
+                        </a>
+                        <div class="pop-dialog">
+                            <div class="dialog-item clear pointer">
+                                <label class="dialog-item-head">
+                                    <i class="item-icon icon-phone"></i>
+                                </label>
+                                <p class="dialog-item-content">
+                                    <span class="field">(021) 53696969</span>
+                                </p>
+                                <i class="tail"></i>
+                            </div>
+                        </div>
+                    </li>
+
+                                        <li class="the-item" id="block-message">
+                        <a href="#">
+                            <i class="icon icon-block-message"></i>
+                            <span class="the-h6">Message</span>
+                        </a>
+                        <div class="pop-dialog">
+                            <div class="wpcf7" id="wpcf7-f9816-o1" lang="en-US" dir="ltr">
+<div class="screen-reader-response"></div>
+<form name="" action="/2016/06/20/domain-class-diagram/#wpcf7-f9816-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="9816" />
+<input type="hidden" name="_wpcf7_version" value="4.0.2" />
+<input type="hidden" name="_wpcf7_locale" value="en_US" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f9816-o1" />
+<input type="hidden" name="_wpnonce" value="43247a269a" />
+</div>
+<div class="dialog-item clear pointer">
+<label class="dialog-item-head"><i class="item-icon icon-man-woman"></i></label>
+<div class="dialog-item-content">
+ <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required field input" aria-required="true" aria-invalid="false" placeholder="Name" /></span>
+</div>
+</div>
+<div class="dialog-item clear pointer">
+<label class="dialog-item-head"><i class="item-icon icon-at"></i></label>
+<div class="dialog-item-content">
+<span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email field class" aria-required="true" aria-invalid="false" placeholder="Email" /></span>
+</div>
+</div>
+<div class="dialog-item clear pointer">
+<label class="dialog-item-head"><i class="item-icon icon-pencil"></i></label>
+<div class="dialog-item-content">
+<span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required field textarea" aria-required="true" aria-invalid="false" placeholder="Message"></textarea></span>
+</div>
+</div>
+<div class="dialog-item clear pointer submit"><input type="submit" value="Submit Message" class="wpcf7-form-control wpcf7-submit field submit" /><i class="tail"></i>
+</div>
+<div class="wpcf7-response-output wpcf7-display-none"></div></form></div>                        </div>
+                    </li>
+                                    </ul>
+            </div>
+                        <div class="col-md-2 the-item" id="download-brochure">
+                <div class="pop-dialog not-bubbling">
+                    <div class="dialog-item clear pointer no-icon">
+                        <p class="dialog-item-content">
+                            <a href="http://binus.ac.id/2011/10/brochure-binus-university/" class="field multi-line">
+                                BINUS UNIVERSITY
+                            </a>
+                        </p>
+                    </div>
+                    <div class="dialog-item clear pointer no-icon">
+                        <p class="dialog-item-content">
+                            <a href="http://binus.ac.id/2016/06/brochure-binus-international/" class="field multi-line">
+                                BINUS INTERNATIONAL
+                            </a>
+                        </p>
+                    </div>
+                    <div class="dialog-item clear pointer no-icon">
+                        <p class="dialog-item-content">
+                            <a href="http://binus.ac.id/2014/03/brochure-binus-graduate-program/" class="field multi-line">
+                                BINUS Graduate Program
+                            </a>
+                        </p>
+                    </div>
+                    <div class="dialog-item clear pointer no-icon">
+                        <p class="dialog-item-content">
+                            <a href="http://binus.ac.id/2013/12/brochure-binus-online-learning/" class="field multi-line">
+                                BINUS Online Learning
+                            </a>
+                        </p>
+                    </div>
+                    <div class="dialog-item clear pointer no-icon">
+                        <p class="dialog-item-content">
+                            <a href="http://binus.ac.id/2016/05/brochure-binus-unversity-summarecon-bekasi/" class="field multi-line">
+                                BINUS UNIVERSITY Bekasi
+                            </a>
+                        </p>
+                        <i class="tail"></i>
+                    </div>
+                    <div class="dialog-item clear pointer no-icon">
+                        <p class="dialog-item-content">
+                            <a href="http://bbs.binus.ac.id/wp-content/uploads/2017/05/e-Brochure-MM-BINUS-BUSINESS-SCHOOL-BBS-58ef0008e0ab4.pdf" class="field multi-line">
+                                BINUS Business School
+                            </a>
+                        </p>
+                        <i class="tail"></i>
+                    </div>
+                </div>
+                <a href="http://binus.ac.id/category/download-brochure/" target="blank" >
+                    <span class="the-h6">Download Our <br/>Brochure</span>
+                    <img data-retina-ready="" width="136" height="131" alt="brochure" src="http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/modules/home-admission/assets/university/images/brochure.png"/>
+                </a>
+            </div>
+                    </div>
+    </section>
+                    </div>
+            </div>
+        </div>
+    </section>
+        <section id="home-program-search" class="container-fluid generic-cotainer ">
+        <div class="container-fluid indent-content clear">
+            <div class="child-container container">
+                <div class="row">
+                <section id="program-search-wrapper">
+                <form class="row ajax" action="http://sis.binus.ac.id/search-program" id="program-search-box" method="get" data-target="#home-search-result">
+                    <input type="hidden" name="program-unit" id="ProgramSearchProgramUnit" value=""/>
+                    <div class="col-sm-3">
+                        <h3 class="the-h1">FIND A PROGRAM</h3>
+                    </div>
+                    <div class="col-sm-7 search-criteria" id="main-search-criteria">
+                        <div class="row">
+                            <div class="col-sm-6 col criteria">
+                                <span class="text-input-wrapper">
+                                    <input id="ProgramSearchKeyword" name="keyword" type="text" class="text" placeholder="Type a keyword" value=""/>
+                                </span>
+                            </div>
+                            <div class="col-sm-6 col criteria">
+                                <select class="fancy" id="ProgramSearchProgramType" name="program-type" >
+                                    <option value="">All Program Types</option>
+                                    <option class='' value='undergraduate' >Undergraduate</option><option class='child' value='s1' >S1</option><option class='child' value='d4' >D4</option><option class='child' value='d3-extension' >D3 Extension</option><option class='child' value='d3' >D3</option><option class='' value='master-track' >Master Track</option><option class='' value='graduate' >Graduate</option><option class='child' value='s3' >S3</option><option class='child' value='s2' >S2</option><option class='' value='double-degree' >Double Degree</option>                                </select>
+                            </div>
+                        </div>
+                        <div id="program-advance-search-wrapper">
+                            <div class="row">
+                                <div class="col-sm-6 col criteria">
+                                    <select class="fancy" id="ProgramSearchCampus" name="campus">
+                                        <option value="">All Campus</option>
+                                        <option class='' value='alam-sutera' >Alam Sutera</option><option class='' value='bekasi' >Bekasi</option><option class='' value='fx' >Fx</option><option class='' value='jwc' >JWC</option><option class='' value='kemanggisan' >Kemanggisan</option><option class='' value='online' >Online</option>                                    </select>
+                                </div>
+                                <div class="col-sm-6 col criteria">
+                                    <select class="fancy" id="ProgramSearchDiscipline" name="discipline">
+                                        <option value="">All Discipline</option>
+                                        <option class='' value='accounting-finance' >Accounting &amp; Finance</option><option class='' value='art-design' >Art &amp; Design</option><option class='' value='business' >Business</option><option class='' value='communication' >Communication</option><option class='' value='computer' >Computer</option><option class='' value='computing' >Computing</option><option class='' value='engineering' >Engineering</option><option class='' value='humanities' >Humanities</option><option class='' value='management' >Management</option><option class='' value='marketing' >Marketing</option>                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col criteria">
+                                    <select class="fancy" id="ProgramSearchFaculty" name="faculty">
+                                        <option value="">All Faculty</option>
+                                        <option class='' value='binus-aso-school-of-engineering' >BINUS ASO School of Engineering</option><option class='' value='binus-business-school' >BINUS Business School</option><option class='' value='binus-graduate-program' >BINUS GRADUATE PROGRAM</option><option class='' value='binus-northumbria-school-of-design' >BINUS Northumbria School of Design</option><option class='' value='binus-online-learning' >BINUS ONLINE LEARNING</option><option class='' value='doctor-of-computer-science' >Doctor of Computer Science</option><option class='' value='doctor-of-research-in-management' >Doctor of Research in Management</option><option class='' value='double-programs' >Double Programs</option><option class='' value='faculty-of-business' >Faculty of Business</option><option class='' value='faculty-of-computing-multimedia-technology' >Faculty of Computing, Multimedia, &amp; Technology</option><option class='' value='faculty-of-economics-and-communication' >Faculty of Economics and Communication</option><option class='' value='faculty-of-engineering' >Faculty of Engineering</option><option class='' value='faculty-of-humanities' >Faculty of Humanities</option><option class='' value='master-track-programs' >Master Track Programs</option><option class='' value='mm-executive' >MM Executive</option><option class='' value='mm-online' >MM Online</option><option class='' value='mm-profesional' >MM Profesional</option><option class='' value='mm-young-professional' >MM Young Professional</option><option class='' value='school-of-business' >School of Business</option><option class='' value='school-of-business-management' >School of Business Management</option><option class='' value='school-of-computer-science' >School of Computer Science</option><option class='' value='school-of-design' >School of Design</option><option class='' value='school-of-information-systems' >School of Information Systems</option>                                    </select>
+                                </div>
+                                <div class="col-sm-6 col criteria">
+                                    <select class="fancy" id="ProgramSearchStudyMode" name="study-mode">
+                                        <option value="">All Study Mode</option>
+                                        <option class='' value='fulltime' >Full Time</option><option class='' value='online' >Online</option>                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col" id="program-search-submit-box">
+                        <div class="row">
+                            <button class="button col-xs-6 col-sm-12">SEARCH</button>
+                            <a href="#" id="program-advance-search" class="col-xs-6 col-sm-12">ADVANCE SEARCH</a>
+                        </div>
+                    </div>
+                </form>
+            </section>
+                    <section id="home-search-result"></section>
+                            </div>
+            </div>
+        </div>
+    </section>
+        <section id="social-media" class="container-fluid">
+        <div class="container-fluid indent-content">
+            <div class="child-container container">
+                                <div class="row ">
+                    <div class="social-media-box col-md-6" id="general-socmed">
+                        <div class="inside">
+                            <span class="pre-title">GET CONNECTED WITH</span>
+                            <p class="the-h1">SOCIAL MEDIA</p>
+                            <p class="brief">
+                                Let’s relentlessly connected and get caught up each other.
+                            </p>
+                            <ul id="web-socmeds" class="clear">
+                                <li class='socmed-item socmed-fb'><a class='icon-fb' href='http://facebook.com/schoolisbinus'>fb</a></li><li class='socmed-item socmed-twitter'><a class='icon-twitter' href='http://twitter.com/schoolisbinus'>twitter</a></li><li class='socmed-item socmed-instagram'><a class='icon-instagram' href='https://instagram.com/schoolisbinus'>instagram</a></li><li class='socmed-item socmed-rss'><a class='icon-rss' href='http://sis.binus.ac.id/feed'>RSS Feed</a></li>                            </ul>
+                        </div>
+                    </div>
+                    <div class="social-media-box col-md-6" id="twitter-container">
+                        <div class="inside">
+                            <div id="latest-tweets" data-screen-name="schoolisbinus">
+                                    <div id="tweet-rails" >
+                                        <ul class="the-tweets">
+                                            <li class="tweet">
+                                                <p class="tweet-text">Looking for tweets ...</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="tweet-bird"></div>
+                            </div><!-- #latest-tweets -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+        <footer id="web-footer" class="container-fluid">
+        <div class="container-fluid indent-content">
+            <div class="child-container container">
+                <div class="row" id="footer-top-part">
+                    <section class="col-lg-6 col-md-6 col-sm-6 col-xs-12 footer-part" id="binus-education">
+                        <div class="inside">
+                            <span class="pre-title">More From</span>
+                            <span class="title">BINUS EDUCATION</span>
+                            <div class="footer-content row">
+                                <div class="col-lg-12">
+                                    <select class="fancy" id="binus-education-footer-link">
+                                        <option value="">Select Program</option>
+                                        <option value="http://www.binus-school.net/">BINUS International School</option>
+                                        <option value="http://binus.ac.id">BINUS University</option>
+                                        <option value="http://onlinelearning.binus.ac.id">BINUS Online Learning</option>
+                                        <option value="http://bbs.binus.ac.id">BINUS Business School</option>
+                                        <option value="http://www.binuscenter.com/default/Indonesia">BINUS Center</option>
+                                        <option value="http://web.binus.ac.id/io/">International Office</option>
+                                        <option value="http://teachforindonesia.org/">Teach For Indonesia</option>
+                                        <option value="http://kalbis.ac.id">Kalbis Institute</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col-lg-6 col-md-6 col-sm-6 col-xs-12 footer-part" id="organization-address">
+                                                <div class="inside">
+                            <span class="pre-title">Say Hi ! or..</span>
+                            <span class="title">SEND YOUR QUESTION</span>
+                            <div class="footer-content">
+                                <address class="address row">
+                                    <p class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
+                                        BINUS UNIVERSITY | School of Information Systems                                        <br/>Jl. K. H. Syahdan No. 9, Kemanggisan, Palmerah <br> Jakarta 11480 Indonesia                                         <br/>Phone +62 21 534 5830, +62 21 535 0660 ext. 2229 <br> Fax +62 21 530 0244                                    </p>
+                                                                            <p class="col-lg-2  col-md-2  col-sm-3  col-xs-12" id="contact-us-container">
+                                            <a href="http://sis.binus.ac.id/contact-us/" class="icon-contact-us contact-us">Contact us</a>
+                                        </p>
+                                                                        
+                                </address>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <section class="col-lg-12" id="title-credit">
+                <p id="organization-name">BINUS UNIVERSITY</p>
+                <details>
+                    <summary id="web-copyright">Copyright © BINUS UNIVERSITY. All rights reserved.</summary>
+                </details>
+            </section>
+        </div>
+    </footer>
+    </div>    <div id="ie">
+            <div id="ie-wrap">
+                    <div id="ie-heading-wrap">
+                        <h4 id="ie-heading">Periksa <em>Browser</em> Anda</h4>
+                        <h5 id="ie-subheading">Check Your Browser</h5>
+                    </div>
+                    <div id="ie-id" class="ie-message">
+                        <p>Situs ini tidak lagi mendukung penggunaan browser dengan teknologi tertinggal.</p>
+                        <p>Apabila Anda melihat pesan ini, berarti Anda masih menggunakan <em>browser</em> <strong>Internet Explorer seri 8 / 7 / 6 / ...</strong></p>
+                        <p>Sebagai informasi, <em>browser</em> yang anda gunakan ini <a href="http://browsehappy.com/why/" title="Why is Internet Explorer unsafe?">tidaklah aman</a> dan tidak dapat menampilkan teknologi CSS terakhir yang dapat membuat sebuah situs tampil lebih baik. Bahkan <strong>Microsoft</strong> sebagai pembuatnya,<a href="http://ie6countdown.com/" title="Internet Explorer 6 Countdown"> telah merekomendasikan</a> agar menggunakan browser yang lebih modern.</p>
+                        <p><span class="highlight">Untuk tampilan yang lebih baik, gunakan salah satu <em>browser</em> berikut.</span> <em>Download</em> dan <em>Install</em>, seluruhnya gratis untuk digunakan.</p>
+                    </div>
+                    <div id="ie-en" class="ie-message">
+                        <p><strong>We're Moving Forward.</strong></p>
+                        <p>This Site Is No Longer Supporting Out-of Date Browser.</p>
+                        <p>If you are viewing this message, it means that you are currently using Internet Explorer 8 / 7 / 6 / below to access this site. FYI, it is <a href="http://browsehappy.com/why/" title="Why is Internet Explorer unsafe?">unsafe</a> and unable to render the latest CSS improvements. Even Microsoft, its creator, <a href="http://ie6countdown.com/" title="Internet Explorer 6 Countdown">wants you to install more modern browser</a>.</p>
+                        <p><span class="highlight">Best viewed with one of these browser instead.</span> It is totally free.</p>
+                    </div>
+                    <ol id="browser-list" class="clear">
+                            <li><a href="http://www.google.com/chrome" title="Get Google Chrome, a fast new browser" id="google-chrome">Google Chrome</a></li>
+                            <li><a href="http://www.mozilla.com/en-US/firefox/new/" title="Get Mozilla Firefox" id="mozilla-firefox">Mozilla Firefox</a></li>
+                            <li><a href="http://www.opera.com/download/" title="Opera Web Browser | Faster and safer" id="opera">Opera</a></li>
+                            <li><a href="http://windows.microsoft.com/en-NZ/internet-explorer/downloads/ie-9/worldwide-languages" title="Download Internet Explorer 9" id="internet-explorer">Internet Explorer 9</a></li>
+                    </ol>
+                    <a href="#" id="ie-close" title="Click here to close this message">Close</a>
+            </div>
+    </div>
+    <link rel='stylesheet' id='binus-precompiled-assets-general-css'  href='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/assets/compiled/binus-2015-96-sis/general.css?ver=4.9.4' type='text/css' media='all'  property="stylesheet" />
+<link rel='stylesheet' id='jquery-ui-theme-css'  href='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/css/jquery-ui/jquery-ui.theme.min.css?ver=4.9.4' type='text/css' media='all'  property="stylesheet" />
+<link rel='stylesheet' id='jquery-ui-structure-css'  href='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/css/jquery-ui/jquery-ui.structure.min.css?ver=4.9.4' type='text/css' media='all'  property="stylesheet" />
+<link rel='stylesheet' id='jquery-ui-css'  href='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/css/jquery-ui/jquery-ui.min.css?ver=4.9.4' type='text/css' media='all'  property="stylesheet" />
+<link rel='stylesheet' id='single-css'  href='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/modules/single-default/assets/university/css/single.css?ver=4.9.4' type='text/css' media='all'  property="stylesheet" />
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/modules/social-media/js/socmed.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/modules/home-admission/js/home-admission.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/js/lib/fancybox/jquery.fancybox.pack.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/js/lib/fancy-fields/src/fancyfields-1.2.min.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/js/lib/jquery-data-image/data-img.min.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/js/lib/m-custom-scrollbar/jquery.mCustomScrollbar.concat.min.js?ver=4.9.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var b2014 = {"ajax":"http:\/\/sis.binus.ac.id\/wp-admin\/admin-ajax.php","nonce":"91312d7e64","is_home":"","home_url":"http:\/\/sis.binus.ac.id","float_menu":"1","float_menu_mobile":"1","prog_agg_is_child_site":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/js/binus.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/modules/program-aggregator/js/prog-aggregator.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-includes/js/imagesloaded.min.js?ver=3.2.0'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-includes/js/masonry.min.js?ver=3.3.2'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/modules/gallery/js/gallery.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/js/lib/jquery.mobile/jquery.mobile.custom.min.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/js/lib/fastclick/fastclick.min.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/js/lib/modernizr/modernizr-custom.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/js/lib/retinajs/retina.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/sis.binus.ac.id\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.0.2'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-includes/js/wp-embed.min.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://sis.binus.ac.id/wp-content/themes/binus-2014-58-core/modules/single-default/js/single.js?ver=4.9.4'></script>
+    <script type="text/javascript">(function(b){function a(c,e,d){if(d==""){return}window.open(d)}b(document).ready(function(){b("#binus-education-footer-link").fancyfields("bind","onSelectChange",a)})})(jQuery);</script>
+    </body></html>

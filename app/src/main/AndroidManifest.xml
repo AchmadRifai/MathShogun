@@ -45,6 +45,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_atur"
             android:theme="@style/FullscreenTheme" />
+        <activity android:name=".GameActivity"></activity>
     </application>
 
 </manifest>
