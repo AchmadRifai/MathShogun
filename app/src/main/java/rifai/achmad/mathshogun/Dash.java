@@ -18,35 +18,11 @@ public class Dash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        rifai.achmad.mathshogun.util.Work.setImmersive(this.getWindow());
         findViewById(R.id.playStart).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mainSekarang();
-            }
-        });
-        rifai.achmad.mathshogun.util.Work.setImmersive(this.getWindow());
-        findViewById(R.id.Score).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                highScore();
-            }
-        });
-        findViewById(R.id.opt).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                option();
-            }
-        });
-        findViewById(R.id.aboutBTN).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                about();
-            }
-        });
-        findViewById(R.id.quitBTN).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
             }
         });
     }
@@ -67,6 +43,7 @@ public class Dash extends AppCompatActivity {
     }
 
     private void mainSekarang() {
+        startActivity(new Intent(this,GameActivity.class));
         finish();
     }
 

@@ -1,47 +1,70 @@
 package rifai.achmad.mathshogun.ongame;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
+import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 /**
- * Created by ai on 10/03/2018.
+ * Created by ashura on 09/04/18.
  */
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback{
-    private Activity a;
-    private Game g;
-    private Context c;
-    private GameThread gt;
     private SurfaceHolder holder;
+    private Context c;
+    private Game g;
+    private GameThread gt;
 
-    public GameView(Context context, Activity a) {
-        super(context);
+    public GameView(Context context, AttributeSet attrs) {
+        super(context, attrs);
         c=context;
-        this.a=a;
         holder=getHolder();
         holder.addCallback(this);
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return super.onTouchEvent(event);
-    }
-
-    @Override
-    public void surfaceCreated(SurfaceHolder holder) {
-        g=new Game(c,new Rect(0,0,getWidth(),getHeight()),holder,getResources(),a);
+    public void surfaceCreated(SurfaceHolder surfaceHolder) {
+        Log.i("GAME","Creating View");
+        g=new Game(getContext(),holder,new Rect(0, 0, getWidth(), getHeight()),getResources());
         gt=new GameThread(g);
+        gt.start();
     }
 
     @Override
-    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+    public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i1, int i2) {
+        Log.d("GAME", "changed");
     }
 
     @Override
-    public void surfaceDestroyed(SurfaceHolder holder) {
+    public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
+        Log.d("GAMEVIEW", "destroyed");
+        if(gt!=null){
+            gt.shutdown();
+            while (gt!=null){
+                try {
+                    gt.join();
+                    gt=null;
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public void pause() {
+        g.gs= Game.GameStat.PAUSE;
+    }
+
+    public void resume() {
+        g.gs= Game.GameStat.RUN;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        g.onTouchEvent(event);
+        return true;
     }
 }
