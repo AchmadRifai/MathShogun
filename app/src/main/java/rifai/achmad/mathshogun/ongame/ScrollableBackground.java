@@ -5,4 +5,6 @@ package rifai.achmad.mathshogun.ongame;
  */
 
 public class ScrollableBackground {
+    public Sprite[]sprites;
+    public int speed;
 }
