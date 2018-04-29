@@ -46,11 +46,11 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_atur"
             android:theme="@style/FullscreenTheme" />
-        <activity android:name=".GameActivity"
+        <activity
+            android:name=".GameActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="landscape"
             android:showOnLockScreen="true"
-            android:theme="@style/FullscreenTheme" ></activity>
+            android:theme="@style/FullscreenTheme" />
     </application>
 
 </manifest>

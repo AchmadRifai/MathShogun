@@ -17,6 +17,7 @@ import org.w3c.dom.Node;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -29,6 +30,7 @@ import javax.xml.transform.stream.StreamResult;
 import rifai.achmad.mathshogun.Atur;
 import rifai.achmad.mathshogun.beans.Catatan;
 import rifai.achmad.mathshogun.beans.Pengaturan;
+import rifai.achmad.mathshogun.beans.Soal;
 
 /**
  * Created by ai on 22/09/2017.
@@ -135,5 +137,30 @@ public class Work {
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
                 View.SYSTEM_UI_FLAG_FULLSCREEN |
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+    }
+
+    public static Soal genSoal(int level, Soal.TipeSoal tipeSoal) {
+        int op,awal=1,akhir,add;
+        Soal s=new Soal();
+        if(tipeSoal== Soal.TipeSoal.MUDAH)op=genRandom(1,2);
+        else op=genRandom(1,4);
+        if(op==1)s.setOperasi(Soal.SoalOperasi.TAMBAH);
+        else if(op==2)s.setOperasi(Soal.SoalOperasi.KURANG);
+        else if(op==3)s.setOperasi(Soal.SoalOperasi.KALI);
+        else if(op==4)s.setOperasi(Soal.SoalOperasi.BAGI);
+        if(tipeSoal== Soal.TipeSoal.SULIT)add=10;
+        else add=5;
+        akhir=add;
+        for(int x=1;x<level;x++){
+            awal+=add;
+            akhir+=add;
+        }s.setAngka2(genRandom(awal,akhir));
+        s.setAngka1(genRandom(awal,akhir));
+        return s;
+    }
+
+    private static int genRandom(int i, int i1) {
+        Random r=new Random();
+        return r.nextInt((i1-i)+1)+i;
     }
 }
