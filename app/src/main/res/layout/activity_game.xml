@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:theme="@style/Theme.AppCompat"
     android:layout_height="match_parent"
     tools:context="rifai.achmad.mathshogun.GameActivity">
-
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="44pt"
+            android:id="@+id/waktu"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="8pt"
+                android:layout_marginLeft="3pt"
+                android:id="@+id/gold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="8pt"
+                android:layout_marginLeft="3pt"
+                android:id="@+id/life"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="8pt"
+                android:layout_marginLeft="3pt"
+                android:id="@+id/exp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="8pt"
+                android:id="@+id/batasEXP"
+                android:layout_marginLeft="3pt"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="8pt"
+                android:layout_marginLeft="3pt"
+                android:id="@+id/level"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

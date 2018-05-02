@@ -43,7 +43,16 @@ public class Dash extends AppCompatActivity {
     }
 
     private void mainSekarang() {
-        startActivity(new Intent(this,GameActivity.class));
+        Intent i=new Intent(this,GameActivity.class);
+        Bundle b=new Bundle();
+        b.putInt("waktu",5);
+        b.putInt("nyawa",5);
+        b.putInt("level",1);
+        b.putInt("batas_exp",100);
+        b.putInt("exp",0);
+        b.putInt("gold",0);
+        i.replaceExtras(b);
+        startActivity(i);
         finish();
     }
 

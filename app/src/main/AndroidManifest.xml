@@ -51,6 +51,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:showOnLockScreen="true"
             android:theme="@style/FullscreenTheme" />
+        <activity android:name=".Quis"></activity>
     </application>
 
 </manifest>
