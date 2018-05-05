@@ -7,6 +7,8 @@ import android.util.Log;
 
 public class Player extends Sprite {
 
+    public int level=1,batas_exp=100,exp=0,gold=0,nyawa=5;
+
     public Player(Bitmap image, Context context, Rect hitbox, Rect screen) {
         super(image, context, hitbox, screen);
         this.affectedByGrav = true;

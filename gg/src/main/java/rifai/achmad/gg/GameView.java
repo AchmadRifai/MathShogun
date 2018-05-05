@@ -7,8 +7,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-public class GameView extends SurfaceView implements SurfaceHolder.Callback {
-
+public class GameView extends SurfaceView implements SurfaceHolder.Callback{
     SurfaceHolder holder;
     GameThread gameThread;
     Game game;
@@ -56,5 +55,25 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public boolean onTouchEvent(MotionEvent event) {
         game.onTouchEvent(event);
         return true;
+    }
+
+    public void menang() {
+        game.menang();
+    }
+
+    public void kalah() {
+        game.kalah();
+    }
+
+    public boolean isLose(){
+        return game.kalahWes();
+    }
+
+    public void saveScore() {
+        game.simpanScore();
+    }
+
+    public void setNama(String nama) {
+        game.nama=nama;
     }
 }

@@ -22,7 +22,7 @@ public class ConnHelper extends SQLiteOpenHelper {
 
     private void sisipTanda(SQLiteDatabase db) {
         ContentValues cv=new ContentValues();
-        cv.put("tenger",1);
+        cv.put("tenger",0);
         db.insert("iki",null,cv);
     }
 

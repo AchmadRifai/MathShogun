@@ -1,12 +1,15 @@
 package rifai.achmad.mathshogun;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -43,17 +46,20 @@ public class Dash extends AppCompatActivity {
     }
 
     private void mainSekarang() {
-        Intent i=new Intent(this,GameActivity.class);
-        Bundle b=new Bundle();
-        b.putInt("waktu",5);
-        b.putInt("nyawa",5);
-        b.putInt("level",1);
-        b.putInt("batas_exp",100);
-        b.putInt("exp",0);
-        b.putInt("gold",0);
-        i.replaceExtras(b);
-        startActivity(i);
-        finish();
+        Dialog d=new Dialog(this);
+        d.setContentView(R.layout.namapemain);
+        d.setTitle("Nama Anda");
+        final EditText nama=(EditText)findViewById(R.id.namaAnda);
+        Button b=(Button)findViewById(R.id.startMyGame);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(Dash.this,GameActivity.class);
+                i.putExtra("nama",""+nama.getText());
+                startActivity(i);
+                finish();
+            }
+        });d.show();
     }
 
     @Override

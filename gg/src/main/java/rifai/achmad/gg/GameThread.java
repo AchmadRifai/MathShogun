@@ -14,11 +14,11 @@ public class GameThread extends Thread {
         long lastTime = System.currentTimeMillis();
 
         // Game loop
-        while (running) {
+        while (running&&!game.kalahWes()) {
             long now = System.currentTimeMillis();
             long elapsed = now - lastTime;
 
-            if (elapsed < FRAME_RATE) {
+            if (elapsed < FRAME_RATE&&!game.inQuis()) {
                 game.update(elapsed);
                 game.draw();
             }

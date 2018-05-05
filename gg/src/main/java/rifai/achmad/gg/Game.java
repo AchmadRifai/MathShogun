@@ -1,5 +1,6 @@
 package rifai.achmad.gg;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.BitmapFactory;
@@ -10,15 +11,101 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 
+import org.joda.time.DateTime;
+
+import java.util.List;
+
+import rifai.achmad.dbne.ConnHelper;
+import rifai.achmad.dbne.Soal;
+import rifai.achmad.dbne.dao.DAONilai;
+import rifai.achmad.dbne.dao.DAOPengaturan;
+import rifai.achmad.dbne.entity.Nilai;
+import rifai.achmad.dbne.entity.Pengaturan;
+
 public class Game {
+    public boolean inQuis() {
+        return quis;
+    }
+
+    public boolean kalahWes() {
+        return state==GameState.LOST;
+    }
+
+    public void simpanScore() {
+        ConnHelper ch=new ConnHelper(context);
+        DAONilai dao=new DAONilai(ch);
+        Nilai n=new Nilai();
+        n.setTgl(DateTime.now());
+        n.setPemain(nama);
+        n.setNyawa(player.nyawa);
+        n.setMode(getMode(ch));
+        n.setLevel(player.level);
+        n.setGold(player.gold);
+        n.setExp(player.exp);
+        dao.insert(n);
+        ch.close();
+    }
+
+    private Soal.TipeSoal getMode(ConnHelper ch) {
+        Soal.TipeSoal t=null;
+        DAOPengaturan dao=new DAOPengaturan(ch);
+        List<Pengaturan>l=dao.all();
+        if(!l.isEmpty()){
+            Pengaturan p=l.get(0);
+            t=p.getMode();
+        }return t;
+    }
+
+    public void kalah() {
+        player.nyawa-=1;
+        if(player.nyawa==0)state=GameState.LOST;
+        else state=GameState.RUNNING;
+    }
+
+    public void menang() {
+        player.gold+=20*player.level*kesulitan();
+        player.exp+=20*player.level*kesulitan();
+        checkEXP();
+        if(player.level==5)state=GameState.LOST;
+        else state=GameState.RUNNING;
+    }
+
+    private void checkEXP() {
+        if(player.exp>=player.batas_exp){
+            int b=player.batas_exp;
+            player.level+=1;
+            player.batas_exp*=2;
+            player.exp-=b;
+            checkEXP();
+        }
+    }
+
+    private int kesulitan() {
+        int i=0;
+        ConnHelper ch=new ConnHelper(context);
+        Soal.TipeSoal t=getMode(ch);
+        switch (t){
+            case SULIT:
+                i=3;
+                break;
+            case SEDANG:
+                i=2;
+                break;
+            case MUDAH:
+                i=1;
+                break;
+        }ch.close();
+        return 1;
+    }
 
     private enum GameState {
-        START, PAUSED, RUNNING, LOST
+        START, PAUSED, RUNNING, LOST,INQUIS
     }
 
     private Context context;
     private SurfaceHolder holder;
     private Rect screen;
+    public boolean quis=false;
     private Resources resources;
     private GameState state = GameState.START;
 
@@ -29,6 +116,7 @@ public class Game {
     private ScrollableBackground skyline_far;
     private Vehicle testCar;
     private Sprite loseText;
+    public String nama;
 
     Paint borderPaint = new Paint();
     BitmapFactory.Options options;
@@ -97,6 +185,13 @@ public class Game {
                 case START:
                     drawGame(canvas);
                     break;
+                case INQUIS:
+                    drawGame(canvas);
+                    QuisFragment qf=new QuisFragment(player.level);
+                    Activity a= (Activity) context;
+                    qf.show(a.getFragmentManager(),"Level"+player.level+"Gold"
+                            +player.gold+"EXP"+player.exp);
+                    break;
             }
             //Log.d("GAME_DRAW", "Unlocking canvas");
             holder.unlockCanvasAndPost(canvas);
@@ -116,6 +211,42 @@ public class Game {
         highway.draw(canvas);
         testCar.draw(canvas, 0);
         player.draw(canvas, 0);
+        nyawaDraw(canvas);
+        levelDraw(canvas);
+        expDraw(canvas);
+        goldDraw(canvas);
+    }
+
+    private void nyawaDraw(Canvas canvas) {
+        Paint p=new Paint();
+        p.setColor(Color.RED);
+        int i=resources.getDimensionPixelSize(R.dimen.status_text_size);
+        p.setTextSize(i);
+        canvas.drawText(""+player.nyawa+" Nyawa",10,12,p);
+    }
+
+    private void goldDraw(Canvas canvas) {
+        Paint p=new Paint();
+        p.setColor(Color.argb(255,212,175,55));
+        int i=resources.getDimensionPixelSize(R.dimen.status_text_size);
+        p.setTextSize(i);
+        canvas.drawText(""+player.gold+" Gold",10,48,p);
+    }
+
+    private void expDraw(Canvas canvas) {
+        Paint p=new Paint();
+        p.setColor(Color.GREEN);
+        int i=resources.getDimensionPixelSize(R.dimen.status_text_size);
+        p.setTextSize(i);
+        canvas.drawText(""+player.exp+" EXP",10,36,p);
+    }
+
+    private void levelDraw(Canvas canvas) {
+        Paint p=new Paint();
+        p.setColor(Color.BLUE);
+        int i=resources.getDimensionPixelSize(R.dimen.status_text_size);
+        p.setTextSize(i);
+        canvas.drawText("Level "+player.level,10,24,p);
     }
 
     private void restartGame() {

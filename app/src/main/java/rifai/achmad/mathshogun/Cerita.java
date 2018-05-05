@@ -25,7 +25,7 @@ public class Cerita extends Activity {
     }
 
     private void setuju() {
-        Work.terbaca(this);
+        rifai.achmad.dbne.Work.terbaca(this);
         startActivity(new Intent(this,Dash.class));
         finish();
     }
