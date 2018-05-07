@@ -46,20 +46,10 @@ public class Dash extends AppCompatActivity {
     }
 
     private void mainSekarang() {
-        Dialog d=new Dialog(this);
-        d.setContentView(R.layout.namapemain);
-        d.setTitle("Nama Anda");
-        final EditText nama=(EditText)findViewById(R.id.namaAnda);
-        Button b=(Button)findViewById(R.id.startMyGame);
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i=new Intent(Dash.this,GameActivity.class);
-                i.putExtra("nama",""+nama.getText());
-                startActivity(i);
-                finish();
-            }
-        });d.show();
+        //Jenenge j=Jenenge.getInstance();
+        //j.show(getFragmentManager(),"namamu");
+        startActivity(new Intent(this,GameActivity.class));
+        finish();
     }
 
     @Override

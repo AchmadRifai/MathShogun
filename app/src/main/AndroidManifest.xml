@@ -49,7 +49,7 @@
         <activity
             android:name=".GameActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:showOnLockScreen="true"
             android:theme="@style/FullscreenTheme" />
         <activity android:name=".Quis"></activity>

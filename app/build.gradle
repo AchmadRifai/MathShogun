@@ -33,6 +33,6 @@ dependencies {
     androidTestCompile 'junit:junit:4.12'
     compile 'com.android.support:design:27.1.1'
     implementation 'com.google.code.gson:gson:2.2.4'
-    implementation project(':gg')
+    implementation project(':ksatria')
     implementation project(':dbne')
 }

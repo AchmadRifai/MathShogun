@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/MathShogun.iml" filepath="$PROJECT_DIR$/MathShogun.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/dbne/dbne.iml" filepath="$PROJECT_DIR$/dbne/dbne.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gg/gg.iml" filepath="$PROJECT_DIR$/gg/gg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ksatria/ksatria.iml" filepath="$PROJECT_DIR$/ksatria/ksatria.iml" />
     </modules>
   </component>
 </project>

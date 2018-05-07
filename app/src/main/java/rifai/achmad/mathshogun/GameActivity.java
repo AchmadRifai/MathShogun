@@ -3,44 +3,29 @@ package rifai.achmad.mathshogun;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
-import rifai.achmad.gg.GameView;
-import rifai.achmad.gg.QuisFragment;
+import rifai.achmad.ksatria.GameView;
 import rifai.achmad.mathshogun.util.Work;
 
-public class GameActivity extends AppCompatActivity implements QuisFragment.GameResult{
-    private GameView gv;
-
+public class GameActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(new GameView(this));
         Work.setImmersive(getWindow());
-        gv=(GameView)findViewById(R.id.gameView);
-        gv.setNama(getIntent().getStringExtra("nama"));
     }
 
     @Override
     public void onBackPressed() {
-        gv.saveScore();
+        //gv.saveScore();
         Toast.makeText(this,"Surender",Toast.LENGTH_LONG).show();
         startActivity(new Intent(this,Dash.class));
         finish();
-    }
-
-    @Override
-    public void menang() {
-        gv.menang();
-    }
-
-    @Override
-    public void kalah() {
-        gv.kalah();
-        if(gv.isLose()){
-            gv.saveScore();
-            startActivity(new Intent(this,Dash.class));
-            finish();
-        }
     }
 }

@@ -58,7 +58,7 @@ public class DAOIki implements DAO<Iki>{
 
     private void fill(Cursor c, List<Iki> l) {
         Iki i=new Iki();
-        i.setTenger(c.getInt(c.getColumnIndex("iki")));
+        i.setTenger(c.getInt(c.getColumnIndex("tenger")));
         l.add(i);
     }
 }
