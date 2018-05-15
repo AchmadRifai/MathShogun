@@ -7,8 +7,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import rifai.achmad.ksatria.GameView;
+//import rifai.achmad.ksatria.GameView;
 import rifai.achmad.mathshogun.util.Work;
+import rifai.achmad.runner.GameView;
 
 public class GameActivity extends AppCompatActivity{
     @Override
@@ -17,7 +18,8 @@ public class GameActivity extends AppCompatActivity{
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(new GameView(this));
+        setContentView(new GameView(this,null));
+        //setContentView(new GameView(this));
         Work.setImmersive(getWindow());
     }
 

@@ -1,1 +1,1 @@
-include ':app', ':dbne', ':ksatria'
+include ':app', ':dbne', ':ksatria', ':runner'
