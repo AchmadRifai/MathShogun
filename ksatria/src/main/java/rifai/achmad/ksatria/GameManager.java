@@ -37,7 +37,7 @@ public class GameManager extends Thread {
 				c = view.getHolder().lockCanvas();
 				synchronized (view.getHolder()) {
 					view.update(ticksPS);
-					view.onDraw(c);
+					view.draw(c);
 				}
 			} finally {
 				if (c != null) {

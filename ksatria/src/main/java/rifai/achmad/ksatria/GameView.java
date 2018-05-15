@@ -20,6 +20,7 @@ public class GameView extends SurfaceView
        /**������ ������ Sprite*/
        private KnightView knight;
        private BackgroundView background;
+       private EnemyView musuh;
        // ��������� ����������
        private WindowManager mWindowManager;
        private DisplayMetrics metrics; 
