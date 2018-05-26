@@ -7,17 +7,17 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import rifai.achmad.dbne.entity.Nilai;
 import rifai.achmad.mathshogun.R;
-import rifai.achmad.mathshogun.beans.Catatan;
 
 /**
  * Created by ai on 31/10/17.
  */
 
 public class NilaiAdapter extends RecyclerView.Adapter<NilaiHolder>{
-    private List<Catatan>l;
+    private List<Nilai>l;
 
-    public NilaiAdapter(List<Catatan> l) {
+    public NilaiAdapter(List<Nilai> l) {
         this.l = l;
     }
 
@@ -30,12 +30,12 @@ public class NilaiAdapter extends RecyclerView.Adapter<NilaiHolder>{
 
     @Override
     public void onBindViewHolder(NilaiHolder holder, int position) {
-        Catatan c=l.get(position);
+        Nilai c=l.get(position);
         holder.setData(c);
     }
 
     @Override
     public int getItemCount() {
-        return l.size();
+        return 0;
     }
 }

@@ -3,19 +3,29 @@ package rifai.achmad.dbne;
 import android.app.Activity;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 
 import java.util.List;
 import java.util.Random;
 
 import rifai.achmad.dbne.dao.DAOIki;
+import rifai.achmad.dbne.dao.DAONilai;
 import rifai.achmad.dbne.dao.DAOPengaturan;
 import rifai.achmad.dbne.entity.Iki;
+import rifai.achmad.dbne.entity.Nilai;
 import rifai.achmad.dbne.entity.Pengaturan;
 
 public class Work {
     public static Soal genSoal(int level, Soal.TipeSoal tipeSoal) {
-        int op,awal=1,akhir,add;
         Soal s=new Soal();
+        generateSoal(s,tipeSoal,level);
+        while (0>s.jawaban())generateSoal(s,tipeSoal,level);
+        return s;
+    }
+
+    private static void generateSoal(Soal s, Soal.TipeSoal tipeSoal, int level) {
+        int op,awal=1,akhir,add;
         if(tipeSoal== Soal.TipeSoal.MUDAH)op=genRandom(1,2);
         else op=genRandom(1,4);
         if(op==1)s.setOperasi(Soal.SoalOperasi.TAMBAH);
@@ -30,7 +40,6 @@ public class Work {
             akhir+=add;
         }s.setAngka2(genRandom(awal,akhir));
         s.setAngka1(genRandom(awal,akhir));
-        return s;
     }
 
     private static int genRandom(int awal, int akhir) {
@@ -72,5 +81,14 @@ public class Work {
             t=p.getMode();
         }ch.close();
         return t;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public static List<Nilai> getAllNilai(Activity activity) {
+        ConnHelper c=new ConnHelper(activity);
+        DAONilai dao=new DAONilai(c);
+        List<Nilai>l=dao.all();
+        c.close();
+        return l;
     }
 }

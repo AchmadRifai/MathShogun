@@ -1,60 +1,53 @@
 package rifai.achmad.runner;
+
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
-import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-public class GameView extends SurfaceView implements SurfaceHolder.Callback {
+public class GameView extends SurfaceView implements SurfaceHolder.Callback{
+    private Game game;
+    private SurfaceHolder holder;
+    private Context context;
+    private MyThreat myThreat;
+    private Activity activity;
+    private String nama;
 
-    SurfaceHolder holder;
-    GameThread gameThread;
-    Game game;
-
-    public GameView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        holder = getHolder();
+    public GameView(Activity activity, String nama) {
+        super(activity);
+        this.nama=nama;
+        this.activity=activity;
+        this.context=activity;
+        holder=getHolder();
         holder.addCallback(this);
     }
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        Log.d("GAMEVIEW", "created");
-        game = new Game(
-                getContext(),
-                new Rect(0, 0, getWidth(), getHeight()),
-                holder,
-                getResources());
-        gameThread = new GameThread(game);
-        gameThread.start();
+        Log.i("GameView","Starting Game");
+        game=new Game(context,getHolder(),new Rect(0,0,getWidth(),getHeight()));
+        myThreat=new MyThreat(game, (MyThreat.GameProcess) activity);
+        myThreat.start();
     }
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-        Log.d("GAMEVIEW", "changed");
+        Log.i("GameView","Changed");
     }
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
-        Log.d("GAMEVIEW", "destroyed");
-        if(gameThread != null) {
-            gameThread.shutdown();
-
-            while(gameThread != null) {
-                try {
-                    gameThread.join();
-                    gameThread = null;
-                } catch (InterruptedException e) {
-                }
-            }
-        }
+        Log.i("GameView","Destroying");
+        myThreat.running=false;
+        game.saveData(nama);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        game.onTouchEvent(event);
+        game.onTuc(event);
         return true;
     }
 }

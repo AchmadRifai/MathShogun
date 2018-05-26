@@ -24,7 +24,7 @@ public class TheScore extends AppCompatActivity {
         RecyclerView r=(RecyclerView)findViewById(R.id.scoreNilai);
         r.setHasFixedSize(true);
         r.setLayoutManager(new LinearLayoutManager(this));
-        r.setAdapter(new NilaiAdapter(Work.readNilai(this)));
+        r.setAdapter(new NilaiAdapter(rifai.achmad.dbne.Work.getAllNilai(this)));
     }
 
     @Override

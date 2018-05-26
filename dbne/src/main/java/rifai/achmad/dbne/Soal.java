@@ -50,7 +50,16 @@ public class Soal {
         else if(operasi==SoalOperasi.KALI)s+="* ";
         else if(operasi==SoalOperasi.KURANG)s+="- ";
         else if(operasi==SoalOperasi.TAMBAH)s+="+ ";
-        s+=""+angka2;
+        s+=""+angka2+" = ";
         return s;
+    }
+
+    public float jawaban(){
+        float f=0;
+        if(operasi==SoalOperasi.BAGI)f=angka1/angka2;
+        else if(operasi==SoalOperasi.KALI)f=angka1*angka2;
+        else if(operasi==SoalOperasi.KURANG)f=angka1-angka2;
+        else if(operasi==SoalOperasi.TAMBAH)f=angka1+angka2;
+        return f;
     }
 }

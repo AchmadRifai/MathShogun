@@ -10,6 +10,13 @@ public class Nilai {
     private DateTime tgl;
     private Soal.TipeSoal mode;
 
+    public int genNilai(){
+        int i=nyawa+gold+exp*level;
+        if(mode== Soal.TipeSoal.SEDANG)i*=2;
+        else if(mode== Soal.TipeSoal.SULIT)i*=4;
+        return i;
+    }
+
     public int getNyawa() {
         return nyawa;
     }

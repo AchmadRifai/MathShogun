@@ -28,6 +28,24 @@ public class Dash extends AppCompatActivity {
                 mainSekarang();
             }
         });
+        findViewById(R.id.opt).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                option();
+            }
+        });
+        findViewById(R.id.Score).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                highScore();
+            }
+        });
+        findViewById(R.id.aboutBTN).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                about();
+            }
+        });
     }
 
     private void about() {
@@ -46,10 +64,10 @@ public class Dash extends AppCompatActivity {
     }
 
     private void mainSekarang() {
-        //Jenenge j=Jenenge.getInstance();
-        //j.show(getFragmentManager(),"namamu");
-        startActivity(new Intent(this,GameActivity.class));
-        finish();
+        Jenenge j=Jenenge.getInstance();
+        j.show(getFragmentManager(),"namamu");
+        //startActivity(new Intent(this,GameActivity.class));
+        //finish();
     }
 
     @Override

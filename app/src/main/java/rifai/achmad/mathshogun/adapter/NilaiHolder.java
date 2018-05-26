@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
+import rifai.achmad.dbne.entity.Nilai;
 import rifai.achmad.mathshogun.R;
 import rifai.achmad.mathshogun.beans.Catatan;
 
@@ -21,9 +22,9 @@ public class NilaiHolder extends RecyclerView.ViewHolder{
         waktu=(TextView)v.findViewById(R.id.waktu);
     }
 
-    public void setData(Catatan c){
-        pemain.setText(c.getNama());
-        nilai.setText(""+c.getPoint());
+    public void setData(Nilai c) {
+        pemain.setText(c.getPemain());
+        nilai.setText(""+c.genNilai());
         waktu.setText(""+c.getTgl());
     }
 }

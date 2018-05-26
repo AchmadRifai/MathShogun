@@ -74,7 +74,8 @@ public class DAONilai implements DAO<Nilai>{
             while (c.moveToNext())fill(l,c);
         }c.close();
         db.close();
-        if(!l.isEmpty())l.sort(komparasi());
+        if(!l.isEmpty())
+            l.sort(komparasi());
         return l;
     }
 
@@ -82,9 +83,9 @@ public class DAONilai implements DAO<Nilai>{
         return new Comparator<Nilai>() {
             @Override
             public int compare(Nilai o1, Nilai o2) {
-                int i,a=ai(o1,o2),b=ai(o2,o1);
-                if(a>b)i=1;
-                else if(b>a)i=-1;
+                int i;
+                if(o1.genNilai()>o2.genNilai())i=1;
+                else if(o2.genNilai()>o1.genNilai())i=-1;
                 else i=0;
                 return i;
             }
