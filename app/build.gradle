@@ -35,5 +35,6 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.2.4'
     //implementation project(':ksatria')
     implementation project(':dbne')
+    implementation project(':japanese')
     implementation project(':runner')
 }

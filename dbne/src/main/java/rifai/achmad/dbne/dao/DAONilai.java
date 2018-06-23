@@ -8,6 +8,7 @@ import android.support.annotation.RequiresApi;
 
 import org.joda.time.DateTime;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -75,7 +76,7 @@ public class DAONilai implements DAO<Nilai>{
         }c.close();
         db.close();
         if(!l.isEmpty())
-            l.sort(komparasi());
+            Collections.sort(l,komparasi());
         return l;
     }
 
@@ -84,8 +85,8 @@ public class DAONilai implements DAO<Nilai>{
             @Override
             public int compare(Nilai o1, Nilai o2) {
                 int i;
-                if(o1.genNilai()>o2.genNilai())i=1;
-                else if(o2.genNilai()>o1.genNilai())i=-1;
+                if(o1.genNilai()>o2.genNilai())i=-1;
+                else if(o2.genNilai()>o1.genNilai())i=1;
                 else i=0;
                 return i;
             }

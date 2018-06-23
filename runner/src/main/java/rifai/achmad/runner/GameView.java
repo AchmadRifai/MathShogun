@@ -1,53 +1,47 @@
 package rifai.achmad.runner;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback{
-    private Game game;
-    private SurfaceHolder holder;
-    private Context context;
-    private MyThreat myThreat;
-    private Activity activity;
     private String nama;
+    private SurfaceHolder holder;
+    private GameModel gm;
+    private GameController gc;
+    private GameController.GameNext gn;
 
-    public GameView(Activity activity, String nama) {
-        super(activity);
+    public GameView(Context context, String nama) {
+        super(context);
+        gn= (GameController.GameNext) context;
         this.nama=nama;
-        this.activity=activity;
-        this.context=activity;
         holder=getHolder();
         holder.addCallback(this);
     }
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        Log.i("GameView","Starting Game");
-        game=new Game(context,getHolder(),new Rect(0,0,getWidth(),getHeight()));
-        myThreat=new MyThreat(game, (MyThreat.GameProcess) activity);
-        myThreat.start();
+        Log.i("GameView","Game Start");
+        gm=new GameModel(this.getContext(),new Rect(0,0,getWidth(),getHeight()),holder);
+        gm.setNama(nama);
+        gc=new GameController(gm);
+        gc.setGn(gn);
+        gc.start();
     }
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-        Log.i("GameView","Changed");
+        Log.i("GameView","Game Changed");
     }
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
-        Log.i("GameView","Destroying");
-        myThreat.running=false;
-        game.saveData(nama);
+        Log.i("GameView","Game Stop");
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        game.onTuc(event);
-        return true;
+    public void destrooy(){
+        gc.setRunning(false);
     }
 }

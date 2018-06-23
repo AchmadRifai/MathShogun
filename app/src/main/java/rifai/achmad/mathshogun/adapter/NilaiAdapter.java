@@ -36,6 +36,6 @@ public class NilaiAdapter extends RecyclerView.Adapter<NilaiHolder>{
 
     @Override
     public int getItemCount() {
-        return 0;
+        return l.size();
     }
 }

@@ -51,4 +51,9 @@
             android:ems="10"
             android:inputType="number" />
     </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:text="SUBMIT"
+        android:id="@+id/jawabKu"
+        android:layout_height="wrap_content" />
 </LinearLayout>
