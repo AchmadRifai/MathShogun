@@ -7,14 +7,13 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import rifai.achmad.japanese.GameModel;
+import rifai.achmad.japanese.GameThread;
+import rifai.achmad.japanese.GameView;
+import rifai.achmad.japanese.SoalView;
 import rifai.achmad.mathshogun.util.Work;
-import rifai.achmad.runner.GameController;
-import rifai.achmad.runner.GameView;
 
-//import rifai.achmad.ksatria.GameView;
-//import rifai.achmad.runner.GameView;
-
-public class GameActivity extends AppCompatActivity implements GameController.GameNext{
+public class GameActivity extends AppCompatActivity implements GameThread.GameProcess{
     private GameView gv;
 
     @Override
@@ -23,15 +22,21 @@ public class GameActivity extends AppCompatActivity implements GameController.Ga
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        Work.setImmersive(getWindow());
         gv=new GameView(this,getIntent().getStringExtra("nama"));
+        Work.setImmersive(getWindow());
         setContentView(gv);
     }
 
     @Override
     public void onBackPressed() {
-        gv.destrooy();
         Toast.makeText(this,"Surender",Toast.LENGTH_LONG).show();
+        gv.stopGame();
+    }
+
+    @Override
+    public void onquis(GameModel gm, GameThread gt) {
+        SoalView sv=new SoalView(this,gm,gt);
+        sv.show();
     }
 
     @Override

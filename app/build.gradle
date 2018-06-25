@@ -36,5 +36,4 @@ dependencies {
     //implementation project(':ksatria')
     implementation project(':dbne')
     implementation project(':japanese')
-    implementation project(':runner')
 }
