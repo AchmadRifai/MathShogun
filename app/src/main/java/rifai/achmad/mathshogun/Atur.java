@@ -2,6 +2,7 @@ package rifai.achmad.mathshogun;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -35,6 +36,7 @@ public class Atur extends AppCompatActivity {
     private Button yo,gag;
     private ImageButton up,down;
     private Soal.TipeSoal tipeSoal;
+    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,9 @@ public class Atur extends AppCompatActivity {
         binding();
         evene();
         muat();
+        mp=MediaPlayer.create(this,R.raw.bg_sound);
+        mp.setLooping(true);
+        mp.start();
     }
 
     private void muat() {
@@ -138,7 +143,13 @@ public class Atur extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        musicEnd();
         startActivity(new Intent(this,Dash.class));
         finish();
+    }
+
+    private void musicEnd() {
+        mp.stop();
+        mp.release();
     }
 }

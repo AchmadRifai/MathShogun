@@ -1,6 +1,5 @@
 package rifai.achmad.mathshogun;
 
-import android.annotation.SuppressLint;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,6 +29,8 @@ public class Jenenge extends DialogFragment{
             public void onClick(View v) {
                 Intent i=new Intent(getActivity(),GameActivity.class);
                 i.putExtra("nama",""+nama.getText());
+                Dash d= (Dash) getActivity();
+                d.musicEnd();
                 startActivity(i);
                 getActivity().finish();
             }

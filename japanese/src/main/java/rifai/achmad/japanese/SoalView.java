@@ -112,7 +112,12 @@ public class SoalView extends Dialog{
                 kalkulasi(s);
             }
         }).start();
-        hide();
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                hide();
+            }
+        });
     }
 
     @Override

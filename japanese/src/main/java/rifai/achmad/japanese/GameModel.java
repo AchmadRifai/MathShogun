@@ -266,7 +266,7 @@ public class GameModel {
         attack.setShow(false);
         damage.setShow(false);
         up.setShow(false);
-        if(player.getLevel()==5||player.getNyawa()==0)kondisi=Kondisi.LOST;
+        if(player.getLevel()==6||player.getNyawa()==0)kondisi=Kondisi.LOST;
         else kondisi=Kondisi.RUN;
     }
 

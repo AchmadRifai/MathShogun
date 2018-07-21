@@ -17,6 +17,8 @@
         <activity
             android:name=".FullscreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape"
+            android:showOnLockScreen="true"
             android:label="@string/app_name"
             android:theme="@style/FullscreenTheme">
             <intent-filter>
@@ -25,26 +27,37 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Cerita" />
+        <activity android:name=".Cerita"
+            android:screenOrientation="landscape"
+            android:showOnLockScreen="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
         <activity
             android:name=".Dash"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_dash"
+            android:screenOrientation="landscape"
+            android:showOnLockScreen="true"
             android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".TheScore"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_the_score"
+            android:screenOrientation="landscape"
+            android:showOnLockScreen="true"
             android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".About"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_about"
+            android:screenOrientation="landscape"
+            android:showOnLockScreen="true"
             android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".Atur"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_atur"
+            android:screenOrientation="landscape"
+            android:showOnLockScreen="true"
             android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".GameActivity"
