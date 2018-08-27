@@ -26,7 +26,7 @@ public class Shogun {
         sokutei();
         level=1;
         gold=0;
-        nyawa=5;
+        nyawa=100;
         exp=0;
         batas_exp=100;
     }

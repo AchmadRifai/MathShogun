@@ -42,7 +42,7 @@ public class Work {
         s.setAngka1(genRandom(awal,akhir));
     }
 
-    private static int genRandom(int awal, int akhir) {
+    public static int genRandom(int awal, int akhir) {
         Random r=new Random();
         return r.nextInt((akhir-awal)+1)+awal;
     }

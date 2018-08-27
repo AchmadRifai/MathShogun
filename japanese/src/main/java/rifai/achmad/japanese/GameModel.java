@@ -180,7 +180,7 @@ public class GameModel {
         p.setStyle(Paint.Style.FILL);
         p.setColor(Color.RED);
         int top=screen.height()/100,left=screen.width()/100;
-        Rect r=new Rect(left,top,left+(20*player.getNyawa()),top+20);
+        Rect r=new Rect(left,top,left+(player.getNyawa()),top+20);
         c.drawRect(r,p);
     }
 
@@ -193,7 +193,9 @@ public class GameModel {
     }
 
     public void injured() {
-        player.setNyawa(player.getNyawa()-1);
+        if(player.getNyawa()>=enemy.getPower().getPower())player.setNyawa(player.getNyawa()-
+                enemy.getPower().getPower());
+        else player.setNyawa(0);
     }
 
     public void shogunSLash1() {
@@ -251,8 +253,8 @@ public class GameModel {
     }
 
     public void reward() {
-        player.setGold(player.getGold()+(20*player.getLevel()));
-        player.setExp(player.getExp()+(20*player.getLevel()));
+        player.setGold(player.getGold()+(enemy.getPower().getPoint()*player.getLevel()));
+        player.setExp(player.getExp()+(enemy.getPower().getPoint()*player.getLevel()));
         enemy.setStatus(Ronin.Status.DIED);
     }
 
