@@ -1,0 +1,2 @@
+model : HUAWEI Y541-U02
+android : 4.4.2

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MathShogun</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ten">10</string>
+    <string name="pil_a">A. 20</string>
+    <string name="pil_b">B. 20</string>
+    <string name="pil_c">C. 20</string>
+    <string name="pil_d">D. 20</string>
+    <string name="cth_soal">10 + 10</string>
+    <string name="title_activity_cer">CerActivity</string>
+    <string name="np">Nama Anda</string>
+    <string name="submit">SUBMIT</string>
+    <string name="title_activity_score">ScoreActivity</string>
+    <string name="title_activity_opt">OptActivity</string>
+    <string name="dif">Kesulitan : </string>
+    <string name="vol">Volume : </string>
+    <string name="MUDAH">MUDAH</string>
+    <string name="SEDANG">SEDANG</string>
+    <string name="SULIT">SULIT</string>
+
+</resources>

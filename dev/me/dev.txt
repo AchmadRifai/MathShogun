@@ -1,0 +1,3 @@
+Nama Produk : M5C
+Model : M710H
+Android : 6.0

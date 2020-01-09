@@ -16,7 +16,7 @@ import android.widget.TextView;
 import rifai.achmad.dbne.Soal;
 import rifai.achmad.dbne.Work;
 
-public class SoalView extends Dialog{
+public class SoalView extends Dialog {
     private Soal s;
     private GameThread gt;
     private GameModel gm;

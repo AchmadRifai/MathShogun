@@ -1,0 +1,3 @@
+model : Mi-4c
+Device : Mi Phone
+android : 7.0
