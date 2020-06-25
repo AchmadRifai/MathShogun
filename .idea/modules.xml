@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MathShogun.iml" filepath="$PROJECT_DIR$/MathShogun.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MathShogun-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MathShogun-app.iml" group="MathShogun/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dbne/MathShogun-dbne.iml" filepath="$PROJECT_DIR$/.idea/modules/dbne/MathShogun-dbne.iml" group="MathShogun/dbne" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/japanese/MathShogun-japanese.iml" filepath="$PROJECT_DIR$/.idea/modules/japanese/MathShogun-japanese.iml" group="MathShogun/japanese" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/andro-pro-MathShogun.iml" filepath="$PROJECT_DIR$/.idea/modules/andro-pro-MathShogun.iml" group="MathShogun" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/dbne/dbne.iml" filepath="$PROJECT_DIR$/dbne/dbne.iml" />
       <module fileurl="file://$PROJECT_DIR$/japanese/japanese.iml" filepath="$PROJECT_DIR$/japanese/japanese.iml" />
